@@ -1,0 +1,3618 @@
+
+> my-app@1.0.0 start
+> tsx watch src/index.ts
+
+[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+8:53:21 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  suppress all logs with { quiet: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+8:57:16 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+8:57:44 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  enable debug logging with { debug: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom 5ROwTdH1S created!
+zxs8mRoY8 joined!
+9P1o2Tlfb joined!
+Game started in room 5ROwTdH1S - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'zxs8mRoY8', playerName: 'Player', roll: 2 },
+  { playerId: '9P1o2Tlfb', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 2
+Zone selection order: [ 'zxs8mRoY8', '9P1o2Tlfb' ]
+Player Player (zxs8mRoY8) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'zxs8mRoY8', isReady: true },
+  { id: '9P1o2Tlfb', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'zxs8mRoY8', isReady: true },
+  { id: '9P1o2Tlfb', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to zxs8mRoY8 (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  zxs8mRoY8: 10 ships
+  9P1o2Tlfb: 10 ships
+Broadcasting deploymentComplete - First turn: Player (zxs8mRoY8)
+Move request from zxs8mRoY8: ship zxs8mRoY8_1755360096716_0.8073547503774794 from g8 to j5
+Ship zxs8mRoY8_1755360096716_0.8073547503774794 moved from g8 to j5, new facing: 0 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship zxs8mRoY8_1755360096716_0.8073547503774794 position to j5, facing: 0
+Broadcasting shipMoved: ship zxs8mRoY8_1755360096716_0.8073547503774794 to j5
+moveToNextTurn - Player states:
+  zxs8mRoY8: isEliminated=false, name=Player
+  9P1o2Tlfb: isEliminated=false, name=Player
+Checking player 9P1o2Tlfb: isEliminated=false
+Turn 2: Now 9P1o2Tlfb's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  zxs8mRoY8: isEliminated=false, name=Player
+  9P1o2Tlfb: isEliminated=true, name=Player
+Checking player zxs8mRoY8: isEliminated=false
+Turn 3: Now zxs8mRoY8's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+9P1o2Tlfb left!
+zxs8mRoY8 left!
+All human players left - disposing room
+Room 5ROwTdH1S disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  zxs8mRoY8: isEliminated=true, name=Player
+  9P1o2Tlfb: isEliminated=true, name=Player
+Checking player 9P1o2Tlfb: isEliminated=true
+Checking player zxs8mRoY8: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom B6wJaoRHv created!
+rXvWAYiBe joined!
+0Fc9TZ6gC joined!
+Game started in room B6wJaoRHv - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'rXvWAYiBe', playerName: 'Player', roll: 6 },
+  { playerId: '0Fc9TZ6gC', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'rXvWAYiBe', '0Fc9TZ6gC' ]
+Player Player (rXvWAYiBe) selected zone 2
+Available zones remaining: 1,3,4
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'rXvWAYiBe', isReady: true },
+  { id: '0Fc9TZ6gC', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'rXvWAYiBe', isReady: true },
+  { id: '0Fc9TZ6gC', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to rXvWAYiBe (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  rXvWAYiBe: 10 ships
+  0Fc9TZ6gC: 10 ships
+Broadcasting deploymentComplete - First turn: Player (rXvWAYiBe)
+Move request from rXvWAYiBe: ship rXvWAYiBe_1755361818923_0.28828778305351044 from c6 to f3
+Ship rXvWAYiBe_1755361818923_0.28828778305351044 moved from c6 to f3, new facing: 0 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship rXvWAYiBe_1755361818923_0.28828778305351044 position to f3, facing: 0
+Broadcasting shipMoved: ship rXvWAYiBe_1755361818923_0.28828778305351044 to f3
+moveToNextTurn - Player states:
+  rXvWAYiBe: isEliminated=false, name=Player
+  0Fc9TZ6gC: isEliminated=false, name=Player
+Checking player 0Fc9TZ6gC: isEliminated=false
+Turn 2: Now 0Fc9TZ6gC's turn (Player)
+9:32:18 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+0Fc9TZ6gC left!
+rXvWAYiBe left!
+All human players left - disposing room
+Room B6wJaoRHv disposing...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+9:32:41 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+9:33:05 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom TiXQ-80a9 created!
+8g5rGXwoz joined!
+6UuREVRrK joined!
+Game started in room TiXQ-80a9 - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: '8g5rGXwoz', playerName: 'Player', roll: 3 },
+  { playerId: '6UuREVRrK', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ '8g5rGXwoz', '6UuREVRrK' ]
+Player Player (8g5rGXwoz) selected zone 2
+Available zones remaining: 1,3,4
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '8g5rGXwoz', isReady: true },
+  { id: '6UuREVRrK', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '8g5rGXwoz', isReady: true },
+  { id: '6UuREVRrK', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to 8g5rGXwoz (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  6UuREVRrK: 10 ships
+  8g5rGXwoz: 10 ships
+Broadcasting deploymentComplete - First turn: Player (8g5rGXwoz)
+Move request from 8g5rGXwoz: ship 8g5rGXwoz_1755362324346_0.9980863888320235 from c6 to f3
+Ship 8g5rGXwoz_1755362324346_0.9980863888320235 moved from c6 to f3, new facing: 0 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship 8g5rGXwoz_1755362324346_0.9980863888320235 position to f3, facing: 0
+Broadcasting shipMoved: ship 8g5rGXwoz_1755362324346_0.9980863888320235 to f3
+moveToNextTurn - Player states:
+  8g5rGXwoz: isEliminated=false, name=Player
+  6UuREVRrK: isEliminated=false, name=Player
+Checking player 6UuREVRrK: isEliminated=false
+Turn 2: Now 6UuREVRrK's turn (Player)
+Move request from 6UuREVRrK: ship 6UuREVRrK_1755362323752_0.9155821173143355 from i6 to h6
+Ship 6UuREVRrK_1755362323752_0.9155821173143355 moved from i6 to h6, new facing: 4 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship 6UuREVRrK_1755362323752_0.9155821173143355 position to h6, facing: 4
+Broadcasting shipMoved: ship 6UuREVRrK_1755362323752_0.9155821173143355 to h6
+moveToNextTurn - Player states:
+  8g5rGXwoz: isEliminated=false, name=Player
+  6UuREVRrK: isEliminated=false, name=Player
+Checking player 8g5rGXwoz: isEliminated=false
+Turn 3: Now 8g5rGXwoz's turn (Player)
+Move request from 8g5rGXwoz: ship 8g5rGXwoz_1755362324346_0.9980863888320235 from f3 to g3
+Ship 8g5rGXwoz_1755362324346_0.9980863888320235 moved from f3 to g3, new facing: 1 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship 8g5rGXwoz_1755362324346_0.9980863888320235 position to g3, facing: 1
+Broadcasting shipMoved: ship 8g5rGXwoz_1755362324346_0.9980863888320235 to g3
+moveToNextTurn - Player states:
+  8g5rGXwoz: isEliminated=false, name=Player
+  6UuREVRrK: isEliminated=false, name=Player
+Checking player 6UuREVRrK: isEliminated=false
+Turn 4: Now 6UuREVRrK's turn (Player)
+Move request from 6UuREVRrK: ship 6UuREVRrK_1755362323752_0.9155821173143355 from h6 to g7
+Ship 6UuREVRrK_1755362323752_0.9155821173143355 moved from h6 to g7, new facing: 4 (colDiff: -1, rowDiff: 1, evenRow: true)
+Updated ship 6UuREVRrK_1755362323752_0.9155821173143355 position to g7, facing: 4
+Broadcasting shipMoved: ship 6UuREVRrK_1755362323752_0.9155821173143355 to g7
+moveToNextTurn - Player states:
+  8g5rGXwoz: isEliminated=false, name=Player
+  6UuREVRrK: isEliminated=false, name=Player
+Checking player 8g5rGXwoz: isEliminated=false
+Turn 5: Now 8g5rGXwoz's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  8g5rGXwoz: isEliminated=true, name=Player
+  6UuREVRrK: isEliminated=false, name=Player
+Checking player 6UuREVRrK: isEliminated=false
+Turn 6: Now 6UuREVRrK's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+6UuREVRrK left!
+8g5rGXwoz left!
+All human players left - disposing room
+Room TiXQ-80a9 disposing...
+9:44:18 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  override existing env vars with { override: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+9:44:43 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  suppress all logs with { quiet: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom bRzHnvVyw created!
+S-l-ZmvsW joined!
+X7ZAunpvA joined!
+Game started in room bRzHnvVyw - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'X7ZAunpvA', playerName: 'Player', roll: 2 },
+  { playerId: 'S-l-ZmvsW', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 2
+Zone selection order: [ 'X7ZAunpvA', 'S-l-ZmvsW' ]
+Player Player (X7ZAunpvA) selected zone 2
+Available zones remaining: 1,3,4
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'S-l-ZmvsW', isReady: true },
+  { id: 'X7ZAunpvA', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'S-l-ZmvsW', isReady: true },
+  { id: 'X7ZAunpvA', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to X7ZAunpvA (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  S-l-ZmvsW: 10 ships
+  X7ZAunpvA: 10 ships
+Broadcasting deploymentComplete - First turn: Player (X7ZAunpvA)
+Move request from X7ZAunpvA: ship X7ZAunpvA_1755362889413_0.47530541933810166 from c6 to f3
+Ship X7ZAunpvA_1755362889413_0.47530541933810166 moved from c6 to f3, new facing: 0 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship X7ZAunpvA_1755362889413_0.47530541933810166 position to f3, facing: 0
+Broadcasting shipMoved: ship X7ZAunpvA_1755362889413_0.47530541933810166 to f3
+moveToNextTurn - Player states:
+  S-l-ZmvsW: isEliminated=false, name=Player
+  X7ZAunpvA: isEliminated=false, name=Player
+Checking player S-l-ZmvsW: isEliminated=false
+Turn 2: Now S-l-ZmvsW's turn (Player)
+Move request from S-l-ZmvsW: ship S-l-ZmvsW_1755362888761_0.39366913520835545 from j2 to j1
+Ship S-l-ZmvsW_1755362888761_0.39366913520835545 moved from j2 to j1, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship S-l-ZmvsW_1755362888761_0.39366913520835545 position to j1, facing: 5
+Broadcasting shipMoved: ship S-l-ZmvsW_1755362888761_0.39366913520835545 to j1
+moveToNextTurn - Player states:
+  S-l-ZmvsW: isEliminated=false, name=Player
+  X7ZAunpvA: isEliminated=false, name=Player
+Checking player X7ZAunpvA: isEliminated=false
+Turn 3: Now X7ZAunpvA's turn (Player)
+Move request from X7ZAunpvA: ship X7ZAunpvA_1755362889413_0.47530541933810166 from f3 to e3
+Ship X7ZAunpvA_1755362889413_0.47530541933810166 moved from f3 to e3, new facing: 4 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship X7ZAunpvA_1755362889413_0.47530541933810166 position to e3, facing: 4
+Broadcasting shipMoved: ship X7ZAunpvA_1755362889413_0.47530541933810166 to e3
+moveToNextTurn - Player states:
+  S-l-ZmvsW: isEliminated=false, name=Player
+  X7ZAunpvA: isEliminated=false, name=Player
+Checking player S-l-ZmvsW: isEliminated=false
+Turn 4: Now S-l-ZmvsW's turn (Player)
+S-l-ZmvsW left!
+X7ZAunpvA left!
+All human players left - disposing room
+Room bRzHnvVyw disposing...
+HexGameRoom ZBrux91hk created!
+QaSPy9uA7 joined!
+JhjRmt6Kp joined!
+Game started in room ZBrux91hk - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'JhjRmt6Kp', playerName: 'Player', roll: 5 },
+  { playerId: 'QaSPy9uA7', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'JhjRmt6Kp', 'QaSPy9uA7' ]
+Player Player (JhjRmt6Kp) selected zone 2
+Available zones remaining: 1,3,4
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'QaSPy9uA7', isReady: true },
+  { id: 'JhjRmt6Kp', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'QaSPy9uA7', isReady: true },
+  { id: 'JhjRmt6Kp', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to JhjRmt6Kp (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  QaSPy9uA7: 10 ships
+  JhjRmt6Kp: 10 ships
+Broadcasting deploymentComplete - First turn: Player (JhjRmt6Kp)
+Move request from JhjRmt6Kp: ship JhjRmt6Kp_1755363001761_0.1915588389664209 from c6 to e4
+Ship JhjRmt6Kp_1755363001761_0.1915588389664209 moved from c6 to e4, new facing: 0 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship JhjRmt6Kp_1755363001761_0.1915588389664209 position to e4, facing: 0
+Broadcasting shipMoved: ship JhjRmt6Kp_1755363001761_0.1915588389664209 to e4
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=false, name=Player
+Checking player QaSPy9uA7: isEliminated=false
+Turn 2: Now QaSPy9uA7's turn (Player)
+Move request from QaSPy9uA7: ship QaSPy9uA7_1755363001010_0.41642797075545634 from i3 to h3
+Ship QaSPy9uA7_1755363001010_0.41642797075545634 moved from i3 to h3, new facing: 4 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship QaSPy9uA7_1755363001010_0.41642797075545634 position to h3, facing: 4
+Broadcasting shipMoved: ship QaSPy9uA7_1755363001010_0.41642797075545634 to h3
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=false, name=Player
+Checking player JhjRmt6Kp: isEliminated=false
+Turn 3: Now JhjRmt6Kp's turn (Player)
+Move request from JhjRmt6Kp: ship JhjRmt6Kp_1755363001761_0.1915588389664209 from e4 to f3
+Ship JhjRmt6Kp_1755363001761_0.1915588389664209 moved from e4 to f3, new facing: 0 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship JhjRmt6Kp_1755363001761_0.1915588389664209 position to f3, facing: 0
+Broadcasting shipMoved: ship JhjRmt6Kp_1755363001761_0.1915588389664209 to f3
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=false, name=Player
+Checking player QaSPy9uA7: isEliminated=false
+Turn 4: Now QaSPy9uA7's turn (Player)
+Move request from QaSPy9uA7: ship QaSPy9uA7_1755363001010_0.41642797075545634 from h3 to f3
+Combat! Ship QaSPy9uA7_1755363001010_0.41642797075545634 destroyed JhjRmt6Kp_1755363001761_0.1915588389664209 at f3
+Ship QaSPy9uA7_1755363001010_0.41642797075545634 moved from h3 to f3, new facing: 4 (colDiff: -2, rowDiff: 0, evenRow: false)
+Updated ship QaSPy9uA7_1755363001010_0.41642797075545634 position to f3, facing: 4
+Broadcasting shipMoved: ship QaSPy9uA7_1755363001010_0.41642797075545634 to f3
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=false, name=Player
+Checking player JhjRmt6Kp: isEliminated=false
+Turn 5: Now JhjRmt6Kp's turn (Player)
+Move request from JhjRmt6Kp: ship JhjRmt6Kp_1755363001761_0.0810142419940234 from a8 to d5
+Ship JhjRmt6Kp_1755363001761_0.0810142419940234 moved from a8 to d5, new facing: 0 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship JhjRmt6Kp_1755363001761_0.0810142419940234 position to d5, facing: 0
+Broadcasting shipMoved: ship JhjRmt6Kp_1755363001761_0.0810142419940234 to d5
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=false, name=Player
+Checking player QaSPy9uA7: isEliminated=false
+Turn 6: Now QaSPy9uA7's turn (Player)
+Move request from QaSPy9uA7: ship QaSPy9uA7_1755363001010_0.41642797075545634 from f3 to g2
+Ship QaSPy9uA7_1755363001010_0.41642797075545634 moved from f3 to g2, new facing: 0 (colDiff: 1, rowDiff: -1, evenRow: false)
+Updated ship QaSPy9uA7_1755363001010_0.41642797075545634 position to g2, facing: 0
+Broadcasting shipMoved: ship QaSPy9uA7_1755363001010_0.41642797075545634 to g2
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=false, name=Player
+Checking player JhjRmt6Kp: isEliminated=false
+Turn 7: Now JhjRmt6Kp's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  S-l-ZmvsW: isEliminated=true, name=Player
+  X7ZAunpvA: isEliminated=false, name=Player
+Checking player X7ZAunpvA: isEliminated=false
+Turn 5: Now X7ZAunpvA's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=false, name=Player
+  JhjRmt6Kp: isEliminated=true, name=Player
+Checking player QaSPy9uA7: isEliminated=false
+Turn 8: Now QaSPy9uA7's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+JhjRmt6Kp left!
+QaSPy9uA7 left!
+All human players left - disposing room
+Room ZBrux91hk disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  S-l-ZmvsW: isEliminated=true, name=Player
+  X7ZAunpvA: isEliminated=true, name=Player
+Checking player S-l-ZmvsW: isEliminated=true
+Checking player X7ZAunpvA: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  QaSPy9uA7: isEliminated=true, name=Player
+  JhjRmt6Kp: isEliminated=true, name=Player
+Checking player JhjRmt6Kp: isEliminated=true
+Checking player QaSPy9uA7: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom yjdH1x_ZV created!
+f2oiLOtaM joined!
+PJ72mIjoU joined!
+Game started in room yjdH1x_ZV - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'f2oiLOtaM', playerName: 'Player', roll: 5 },
+  { playerId: 'PJ72mIjoU', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'f2oiLOtaM', 'PJ72mIjoU' ]
+Player Player (f2oiLOtaM) selected zone 1
+Available zones remaining: 2,3,4
+Deployment timer expired for Player
+Deployment timer expired for Player - auto-deploying
+Checking if all players deployed: [
+  { id: 'f2oiLOtaM', isReady: true },
+  { id: 'PJ72mIjoU', isReady: false }
+]
+Not all players ready yet
+Deployment timer expired for Player
+Deployment timer expired for Player - auto-deploying
+Checking if all players deployed: [
+  { id: 'f2oiLOtaM', isReady: true },
+  { id: 'PJ72mIjoU', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to f2oiLOtaM (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  f2oiLOtaM: 10 ships
+  PJ72mIjoU: 10 ships
+Broadcasting deploymentComplete - First turn: Player (f2oiLOtaM)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  f2oiLOtaM: isEliminated=true, name=Player
+  PJ72mIjoU: isEliminated=false, name=Player
+Checking player PJ72mIjoU: isEliminated=false
+Turn 2: Now PJ72mIjoU's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+PJ72mIjoU left!
+f2oiLOtaM left!
+All human players left - disposing room
+Room yjdH1x_ZV disposing...
+HexGameRoom xyZYQOD7L created!
+ZFXAHcvA3 joined!
+ecHBHvbyb joined!
+Game started in room xyZYQOD7L - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'ZFXAHcvA3', playerName: 'Player', roll: 2 },
+  { playerId: 'ecHBHvbyb', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 2
+Zone selection order: [ 'ZFXAHcvA3', 'ecHBHvbyb' ]
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  f2oiLOtaM: isEliminated=true, name=Player
+  PJ72mIjoU: isEliminated=true, name=Player
+Checking player f2oiLOtaM: isEliminated=true
+Checking player PJ72mIjoU: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+10:15:04 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+ecHBHvbyb left!
+Player left during zone selection - disposing room
+ZFXAHcvA3 left!
+Player left during zone selection - disposing room
+Room xyZYQOD7L disposing...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom xfhasMIyM created!
+iJNxGx9Ww joined!
+SZ4nl-bJm joined!
+Game started in room xfhasMIyM - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'SZ4nl-bJm', playerName: 'Player', roll: 6 },
+  { playerId: 'iJNxGx9Ww', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'SZ4nl-bJm', 'iJNxGx9Ww' ]
+iJNxGx9Ww left!
+Player left during zone selection - disposing room
+SZ4nl-bJm left!
+Player left during zone selection - disposing room
+Room xfhasMIyM disposing...
+HexGameRoom 5BEy6QdZV created!
+Cp28U6umn joined!
+HpwlGTG8i joined!
+Game started in room 5BEy6QdZV - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'HpwlGTG8i', playerName: 'Player', roll: 5 },
+  { playerId: 'Cp28U6umn', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'HpwlGTG8i', 'Cp28U6umn' ]
+Player Player (HpwlGTG8i) selected zone 2
+Available zones remaining: 1,3,4
+Ship already exists at i3 for Cp28U6umn
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'Cp28U6umn', isReady: true },
+  { id: 'HpwlGTG8i', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'Cp28U6umn', isReady: true },
+  { id: 'HpwlGTG8i', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to HpwlGTG8i (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  HpwlGTG8i: 10 ships
+  Cp28U6umn: 10 ships
+Broadcasting deploymentComplete - First turn: Player (HpwlGTG8i)
+Move request from HpwlGTG8i: ship HpwlGTG8i_1755364816542_0.7492052810008727 from a6 to e2
+Ship HpwlGTG8i_1755364816542_0.7492052810008727 moved from a6 to e2, new facing: 0 (colDiff: 4, rowDiff: -4, evenRow: true)
+Updated ship HpwlGTG8i_1755364816542_0.7492052810008727 position to e2, facing: 0
+Broadcasting shipMoved: ship HpwlGTG8i_1755364816542_0.7492052810008727 to e2
+moveToNextTurn - Player states:
+  Cp28U6umn: isEliminated=false, name=Player
+  HpwlGTG8i: isEliminated=false, name=Player
+Checking player Cp28U6umn: isEliminated=false
+Turn 2: Now Cp28U6umn's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  Cp28U6umn: isEliminated=true, name=Player
+  HpwlGTG8i: isEliminated=false, name=Player
+Checking player HpwlGTG8i: isEliminated=false
+Turn 3: Now HpwlGTG8i's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+HpwlGTG8i left!
+Cp28U6umn left!
+All human players left - disposing room
+Room 5BEy6QdZV disposing...
+10:24:55 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  suppress all logs with { quiet: true }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  override existing env vars with { override: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom oI1rnD8gb created!
+gIOpz2QsG joined!
+rhaGd532C joined!
+Game started in room oI1rnD8gb - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'gIOpz2QsG', playerName: 'Player', roll: 4 },
+  { playerId: 'rhaGd532C', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 4
+Zone selection order: [ 'gIOpz2QsG', 'rhaGd532C' ]
+Player Player (gIOpz2QsG) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'gIOpz2QsG', isReady: true },
+  { id: 'rhaGd532C', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'gIOpz2QsG', isReady: true },
+  { id: 'rhaGd532C', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to gIOpz2QsG (dice roll winner)
+Broadcasting deploymentComplete with 21 ships
+Ship breakdown by owner:
+  gIOpz2QsG: 11 ships
+  rhaGd532C: 10 ships
+Broadcasting deploymentComplete - First turn: Player (gIOpz2QsG)
+Move request from gIOpz2QsG: ship gIOpz2QsG_1755365408287_0.8917518148576806 from f9 to i6
+Ship gIOpz2QsG_1755365408287_0.8917518148576806 moved from f9 to i6, new facing: 0 (colDiff: 3, rowDiff: -3, evenRow: false)
+Updated ship gIOpz2QsG_1755365408287_0.8917518148576806 position to i6, facing: 0
+Broadcasting shipMoved: ship gIOpz2QsG_1755365408287_0.8917518148576806 to i6
+moveToNextTurn - Player states:
+  gIOpz2QsG: isEliminated=false, name=Player
+  rhaGd532C: isEliminated=false, name=Player
+Checking player rhaGd532C: isEliminated=false
+Turn 2: Now rhaGd532C's turn (Player)
+10:32:05 AM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+rhaGd532C left!
+gIOpz2QsG left!
+All human players left - disposing room
+Room oI1rnD8gb disposing...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  override existing env vars with { override: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom t1YZaxvTY created!
+mjXfyuDUn joined!
+0_zVAZRD_ joined!
+Game started in room t1YZaxvTY - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: '0_zVAZRD_', playerName: 'Player', roll: 3 },
+  { playerId: 'mjXfyuDUn', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ '0_zVAZRD_', 'mjXfyuDUn' ]
+Player Player (0_zVAZRD_) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'mjXfyuDUn', isReady: false },
+  { id: '0_zVAZRD_', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'mjXfyuDUn', isReady: true },
+  { id: '0_zVAZRD_', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to 0_zVAZRD_ (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  mjXfyuDUn: 10 ships
+  0_zVAZRD_: 10 ships
+Broadcasting deploymentComplete - First turn: Player (0_zVAZRD_)
+Move request from 0_zVAZRD_: ship 0_zVAZRD__1755365578762_0.8028949430644059 from e10 to h7
+Ship 0_zVAZRD__1755365578762_0.8028949430644059 moved from e10 to h7, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship 0_zVAZRD__1755365578762_0.8028949430644059 position to h7, facing: 5
+Broadcasting shipMoved: ship 0_zVAZRD__1755365578762_0.8028949430644059 to h7
+moveToNextTurn - Player states:
+  mjXfyuDUn: isEliminated=false, name=Player
+  0_zVAZRD_: isEliminated=false, name=Player
+Checking player mjXfyuDUn: isEliminated=false
+Turn 2: Now mjXfyuDUn's turn (Player)
+mjXfyuDUn left!
+0_zVAZRD_ left!
+All human players left - disposing room
+Room t1YZaxvTY disposing...
+HexGameRoom grW3XvjQs created!
+nSBbnDwuw joined!
+z1Pb-rHwR joined!
+Game started in room grW3XvjQs - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'z1Pb-rHwR', playerName: 'Player', roll: 5 },
+  { playerId: 'nSBbnDwuw', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'z1Pb-rHwR', 'nSBbnDwuw' ]
+Player Player (z1Pb-rHwR) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'nSBbnDwuw', isReady: false },
+  { id: 'z1Pb-rHwR', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'nSBbnDwuw', isReady: true },
+  { id: 'z1Pb-rHwR', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to z1Pb-rHwR (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  nSBbnDwuw: 10 ships
+  z1Pb-rHwR: 10 ships
+Broadcasting deploymentComplete - First turn: Player (z1Pb-rHwR)
+Move request from z1Pb-rHwR: ship z1Pb-rHwR_1755365701081_0.7307447985631781 from i8 to k6
+Ship z1Pb-rHwR_1755365701081_0.7307447985631781 moved from i8 to k6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship z1Pb-rHwR_1755365701081_0.7307447985631781 position to k6, facing: 5
+Broadcasting shipMoved: ship z1Pb-rHwR_1755365701081_0.7307447985631781 to k6
+moveToNextTurn - Player states:
+  nSBbnDwuw: isEliminated=false, name=Player
+  z1Pb-rHwR: isEliminated=false, name=Player
+Checking player nSBbnDwuw: isEliminated=false
+Turn 2: Now nSBbnDwuw's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  mjXfyuDUn: isEliminated=true, name=Player
+  0_zVAZRD_: isEliminated=false, name=Player
+Checking player 0_zVAZRD_: isEliminated=false
+Turn 3: Now 0_zVAZRD_'s turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+nSBbnDwuw left!
+z1Pb-rHwR left!
+All human players left - disposing room
+Room grW3XvjQs disposing...
+HexGameRoom cdf4CqnaM created!
+s3pqVsd0S joined!
+QAK4nx9rD joined!
+Game started in room cdf4CqnaM - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'QAK4nx9rD', playerName: 'Player', roll: 4 },
+  { playerId: 's3pqVsd0S', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 4
+Zone selection order: [ 'QAK4nx9rD', 's3pqVsd0S' ]
+Player Player (QAK4nx9rD) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 's3pqVsd0S', isReady: false },
+  { id: 'QAK4nx9rD', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 's3pqVsd0S', isReady: true },
+  { id: 'QAK4nx9rD', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to QAK4nx9rD (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  s3pqVsd0S: 10 ships
+  QAK4nx9rD: 10 ships
+Broadcasting deploymentComplete - First turn: Player (QAK4nx9rD)
+Move request from QAK4nx9rD: ship QAK4nx9rD_1755365822634_0.6647881364522659 from f9 to j5
+Ship QAK4nx9rD_1755365822634_0.6647881364522659 moved from f9 to j5, new facing: 5 (colDiff: 4, rowDiff: -4, evenRow: false)
+Updated ship QAK4nx9rD_1755365822634_0.6647881364522659 position to j5, facing: 5
+Broadcasting shipMoved: ship QAK4nx9rD_1755365822634_0.6647881364522659 to j5
+moveToNextTurn - Player states:
+  s3pqVsd0S: isEliminated=false, name=Player
+  QAK4nx9rD: isEliminated=false, name=Player
+Checking player s3pqVsd0S: isEliminated=false
+Turn 2: Now s3pqVsd0S's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  nSBbnDwuw: isEliminated=true, name=Player
+  z1Pb-rHwR: isEliminated=false, name=Player
+Checking player z1Pb-rHwR: isEliminated=false
+Turn 3: Now z1Pb-rHwR's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  mjXfyuDUn: isEliminated=true, name=Player
+  0_zVAZRD_: isEliminated=true, name=Player
+Checking player mjXfyuDUn: isEliminated=true
+Checking player 0_zVAZRD_: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  s3pqVsd0S: isEliminated=true, name=Player
+  QAK4nx9rD: isEliminated=false, name=Player
+Checking player QAK4nx9rD: isEliminated=false
+Turn 3: Now QAK4nx9rD's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+QAK4nx9rD left!
+s3pqVsd0S left!
+All human players left - disposing room
+Room cdf4CqnaM disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  nSBbnDwuw: isEliminated=true, name=Player
+  z1Pb-rHwR: isEliminated=true, name=Player
+Checking player nSBbnDwuw: isEliminated=true
+Checking player z1Pb-rHwR: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  s3pqVsd0S: isEliminated=true, name=Player
+  QAK4nx9rD: isEliminated=true, name=Player
+Checking player s3pqVsd0S: isEliminated=true
+Checking player QAK4nx9rD: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom T2vbh-LAM created!
+cEa7xZ8Of joined!
+LIIQfkftL joined!
+Game started in room T2vbh-LAM - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'LIIQfkftL', playerName: 'Player', roll: 5 },
+  { playerId: 'cEa7xZ8Of', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'LIIQfkftL', 'cEa7xZ8Of' ]
+Player Player (LIIQfkftL) selected zone 2
+Available zones remaining: 1,3,4
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'cEa7xZ8Of', isReady: true },
+  { id: 'LIIQfkftL', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'cEa7xZ8Of', isReady: true },
+  { id: 'LIIQfkftL', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to LIIQfkftL (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  cEa7xZ8Of: 10 ships
+  LIIQfkftL: 10 ships
+Broadcasting deploymentComplete - First turn: Player (LIIQfkftL)
+Move request from LIIQfkftL: ship LIIQfkftL_1755369488632_0.03701104128144439 from c6 to f3
+Ship LIIQfkftL_1755369488632_0.03701104128144439 moved from c6 to f3, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship LIIQfkftL_1755369488632_0.03701104128144439 position to f3, facing: 5
+Broadcasting shipMoved: ship LIIQfkftL_1755369488632_0.03701104128144439 to f3
+moveToNextTurn - Player states:
+  cEa7xZ8Of: isEliminated=false, name=Player
+  LIIQfkftL: isEliminated=false, name=Player
+Checking player cEa7xZ8Of: isEliminated=false
+Turn 2: Now cEa7xZ8Of's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  cEa7xZ8Of: isEliminated=true, name=Player
+  LIIQfkftL: isEliminated=false, name=Player
+Checking player LIIQfkftL: isEliminated=false
+Turn 3: Now LIIQfkftL's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+LIIQfkftL left!
+cEa7xZ8Of left!
+All human players left - disposing room
+Room T2vbh-LAM disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  cEa7xZ8Of: isEliminated=true, name=Player
+  LIIQfkftL: isEliminated=true, name=Player
+Checking player cEa7xZ8Of: isEliminated=true
+Checking player LIIQfkftL: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom UVNz7wvFB created!
+Ds5Mokq04 joined!
+4HNOpaxWE joined!
+Game started in room UVNz7wvFB - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'Ds5Mokq04', playerName: 'Player', roll: 4 },
+  { playerId: '4HNOpaxWE', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 4
+Zone selection order: [ 'Ds5Mokq04', '4HNOpaxWE' ]
+Ds5Mokq04 left!
+Player left during zone selection - disposing room
+4HNOpaxWE left!
+Player left during zone selection - disposing room
+Room UVNz7wvFB disposing...
+HexGameRoom oD071dRCw created!
+_GqwuJ63u joined!
+XaZFdHAVK joined!
+Game started in room oD071dRCw - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'XaZFdHAVK', playerName: 'Player', roll: 5 },
+  { playerId: '_GqwuJ63u', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'XaZFdHAVK', '_GqwuJ63u' ]
+Player Player (XaZFdHAVK) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '_GqwuJ63u', isReady: true },
+  { id: 'XaZFdHAVK', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '_GqwuJ63u', isReady: true },
+  { id: 'XaZFdHAVK', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to XaZFdHAVK (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  XaZFdHAVK: 10 ships
+  _GqwuJ63u: 10 ships
+Broadcasting deploymentComplete - First turn: Player (XaZFdHAVK)
+Move request from XaZFdHAVK: ship XaZFdHAVK_1755370906654_0.21270047675753867 from g8 to k4
+Ship XaZFdHAVK_1755370906654_0.21270047675753867 moved from g8 to k4, new facing: 5 (colDiff: 4, rowDiff: -4, evenRow: true)
+Updated ship XaZFdHAVK_1755370906654_0.21270047675753867 position to k4, facing: 5
+Broadcasting shipMoved: ship XaZFdHAVK_1755370906654_0.21270047675753867 to k4
+moveToNextTurn - Player states:
+  _GqwuJ63u: isEliminated=false, name=Player
+  XaZFdHAVK: isEliminated=false, name=Player
+Checking player _GqwuJ63u: isEliminated=false
+Turn 2: Now _GqwuJ63u's turn (Player)
+_GqwuJ63u left!
+XaZFdHAVK left!
+All human players left - disposing room
+Room oD071dRCw disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  _GqwuJ63u: isEliminated=true, name=Player
+  XaZFdHAVK: isEliminated=false, name=Player
+Checking player XaZFdHAVK: isEliminated=false
+Turn 3: Now XaZFdHAVK's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+HexGameRoom cn5aRXwb9 created!
+cJlMPyuSA joined!
+DMyWZ5fz6 joined!
+Game started in room cn5aRXwb9 - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'cJlMPyuSA', playerName: 'Player', roll: 3 },
+  { playerId: 'DMyWZ5fz6', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ 'cJlMPyuSA', 'DMyWZ5fz6' ]
+Player Player (cJlMPyuSA) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'cJlMPyuSA', isReady: true },
+  { id: 'DMyWZ5fz6', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'cJlMPyuSA', isReady: true },
+  { id: 'DMyWZ5fz6', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to cJlMPyuSA (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  cJlMPyuSA: 10 ships
+  DMyWZ5fz6: 10 ships
+Broadcasting deploymentComplete - First turn: Player (cJlMPyuSA)
+Move request from cJlMPyuSA: ship cJlMPyuSA_1755371099289_0.30166689854408735 from g8 to k4
+Ship cJlMPyuSA_1755371099289_0.30166689854408735 moved from g8 to k4, new facing: 5 (colDiff: 4, rowDiff: -4, evenRow: true)
+Updated ship cJlMPyuSA_1755371099289_0.30166689854408735 position to k4, facing: 5
+Broadcasting shipMoved: ship cJlMPyuSA_1755371099289_0.30166689854408735 to k4
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=false, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player DMyWZ5fz6: isEliminated=false
+Turn 2: Now DMyWZ5fz6's turn (Player)
+Move request from DMyWZ5fz6: ship DMyWZ5fz6_1755371100193_0.016706895128685728 from f3 to h3
+Ship DMyWZ5fz6_1755371100193_0.016706895128685728 moved from f3 to h3, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship DMyWZ5fz6_1755371100193_0.016706895128685728 position to h3, facing: 0
+Broadcasting shipMoved: ship DMyWZ5fz6_1755371100193_0.016706895128685728 to h3
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=false, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player cJlMPyuSA: isEliminated=false
+Turn 3: Now cJlMPyuSA's turn (Player)
+Game ended - disposing room
+Move request from cJlMPyuSA: ship cJlMPyuSA_1755371099289_0.30166689854408735 from k4 to k1
+Ship cJlMPyuSA_1755371099289_0.30166689854408735 moved from k4 to k1, new facing: 5 (colDiff: 0, rowDiff: -3, evenRow: true)
+Updated ship cJlMPyuSA_1755371099289_0.30166689854408735 position to k1, facing: 5
+Broadcasting shipMoved: ship cJlMPyuSA_1755371099289_0.30166689854408735 to k1
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=false, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player DMyWZ5fz6: isEliminated=false
+Turn 4: Now DMyWZ5fz6's turn (Player)
+Move request from DMyWZ5fz6: ship DMyWZ5fz6_1755371100193_0.016706895128685728 from h3 to j3
+Ship DMyWZ5fz6_1755371100193_0.016706895128685728 moved from h3 to j3, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship DMyWZ5fz6_1755371100193_0.016706895128685728 position to j3, facing: 0
+Broadcasting shipMoved: ship DMyWZ5fz6_1755371100193_0.016706895128685728 to j3
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=false, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player cJlMPyuSA: isEliminated=false
+Turn 5: Now cJlMPyuSA's turn (Player)
+Move request from cJlMPyuSA: ship cJlMPyuSA_1755371099289_0.5710435007489145 from i8 to k6
+Ship cJlMPyuSA_1755371099289_0.5710435007489145 moved from i8 to k6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship cJlMPyuSA_1755371099289_0.5710435007489145 position to k6, facing: 5
+Broadcasting shipMoved: ship cJlMPyuSA_1755371099289_0.5710435007489145 to k6
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=false, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player DMyWZ5fz6: isEliminated=false
+Turn 6: Now DMyWZ5fz6's turn (Player)
+Move request from DMyWZ5fz6: ship DMyWZ5fz6_1755371100193_0.016706895128685728 from j3 to j4
+Ship DMyWZ5fz6_1755371100193_0.016706895128685728 moved from j3 to j4, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship DMyWZ5fz6_1755371100193_0.016706895128685728 position to j4, facing: 1
+Broadcasting shipMoved: ship DMyWZ5fz6_1755371100193_0.016706895128685728 to j4
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=false, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player cJlMPyuSA: isEliminated=false
+Turn 7: Now cJlMPyuSA's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  _GqwuJ63u: isEliminated=true, name=Player
+  XaZFdHAVK: isEliminated=true, name=Player
+Checking player _GqwuJ63u: isEliminated=true
+Checking player XaZFdHAVK: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=true, name=Player
+  DMyWZ5fz6: isEliminated=false, name=Player
+Checking player DMyWZ5fz6: isEliminated=false
+Turn 8: Now DMyWZ5fz6's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+DMyWZ5fz6 left!
+cJlMPyuSA left!
+All human players left - disposing room
+Room cn5aRXwb9 disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  cJlMPyuSA: isEliminated=true, name=Player
+  DMyWZ5fz6: isEliminated=true, name=Player
+Checking player cJlMPyuSA: isEliminated=true
+Checking player DMyWZ5fz6: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom W_B8v32EM created!
+8D3_CS0le joined!
+krj3NIfDn joined!
+Game started in room W_B8v32EM - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'krj3NIfDn', playerName: 'Player', roll: 6 },
+  { playerId: '8D3_CS0le', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'krj3NIfDn', '8D3_CS0le' ]
+Player Player (krj3NIfDn) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '8D3_CS0le', isReady: false },
+  { id: 'krj3NIfDn', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '8D3_CS0le', isReady: true },
+  { id: 'krj3NIfDn', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to krj3NIfDn (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  8D3_CS0le: 10 ships
+  krj3NIfDn: 10 ships
+Broadcasting deploymentComplete - First turn: Player (krj3NIfDn)
+Move request from krj3NIfDn: ship krj3NIfDn_1755372228186_0.7518526247390711 from g8 to k4
+Ship krj3NIfDn_1755372228186_0.7518526247390711 moved from g8 to k4, new facing: 5 (colDiff: 4, rowDiff: -4, evenRow: true)
+Updated ship krj3NIfDn_1755372228186_0.7518526247390711 position to k4, facing: 5
+Broadcasting shipMoved: ship krj3NIfDn_1755372228186_0.7518526247390711 to k4
+moveToNextTurn - Player states:
+  8D3_CS0le: isEliminated=false, name=Player
+  krj3NIfDn: isEliminated=false, name=Player
+Checking player 8D3_CS0le: isEliminated=false
+Turn 2: Now 8D3_CS0le's turn (Player)
+Move request from 8D3_CS0le: ship 8D3_CS0le_1755372227501_0.675956679649236 from f3 to h3
+Ship 8D3_CS0le_1755372227501_0.675956679649236 moved from f3 to h3, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship 8D3_CS0le_1755372227501_0.675956679649236 position to h3, facing: 0
+Broadcasting shipMoved: ship 8D3_CS0le_1755372227501_0.675956679649236 to h3
+moveToNextTurn - Player states:
+  8D3_CS0le: isEliminated=false, name=Player
+  krj3NIfDn: isEliminated=false, name=Player
+Checking player krj3NIfDn: isEliminated=false
+Turn 3: Now krj3NIfDn's turn (Player)
+8D3_CS0le left!
+krj3NIfDn left!
+All human players left - disposing room
+Room W_B8v32EM disposing...
+HexGameRoom M00xgWGWQ created!
+FEZ_Bgdz9 joined!
+M4Jm2fvea joined!
+Game started in room M00xgWGWQ - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'FEZ_Bgdz9', playerName: 'Player', roll: 2 },
+  { playerId: 'M4Jm2fvea', playerName: 'Player', roll: 2 }
+]
+Tie detected! Re-rolling...
+Rolling dice for 2 players: [
+  { playerId: 'FEZ_Bgdz9', playerName: 'Player', roll: 5 },
+  { playerId: 'M4Jm2fvea', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'FEZ_Bgdz9', 'M4Jm2fvea' ]
+Player Player (FEZ_Bgdz9) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'FEZ_Bgdz9', isReady: true },
+  { id: 'M4Jm2fvea', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'FEZ_Bgdz9', isReady: true },
+  { id: 'M4Jm2fvea', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to FEZ_Bgdz9 (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  FEZ_Bgdz9: 10 ships
+  M4Jm2fvea: 10 ships
+Broadcasting deploymentComplete - First turn: Player (FEZ_Bgdz9)
+Move request from FEZ_Bgdz9: ship FEZ_Bgdz9_1755372452217_0.6175444909362251 from g8 to k4
+Ship FEZ_Bgdz9_1755372452217_0.6175444909362251 moved from g8 to k4, new facing: 5 (colDiff: 4, rowDiff: -4, evenRow: true)
+Updated ship FEZ_Bgdz9_1755372452217_0.6175444909362251 position to k4, facing: 5
+Broadcasting shipMoved: ship FEZ_Bgdz9_1755372452217_0.6175444909362251 to k4
+moveToNextTurn - Player states:
+  FEZ_Bgdz9: isEliminated=false, name=Player
+  M4Jm2fvea: isEliminated=false, name=Player
+Checking player M4Jm2fvea: isEliminated=false
+Turn 2: Now M4Jm2fvea's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  8D3_CS0le: isEliminated=false, name=Player
+  krj3NIfDn: isEliminated=true, name=Player
+Checking player 8D3_CS0le: isEliminated=false
+Turn 4: Now 8D3_CS0le's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+FEZ_Bgdz9 left!
+M4Jm2fvea left!
+All human players left - disposing room
+Room M00xgWGWQ disposing...
+HexGameRoom SLvFmHK1b created!
+ys8I-rqqG joined!
+jd0NgV-gW joined!
+Game started in room SLvFmHK1b - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'jd0NgV-gW', playerName: 'Player', roll: 5 },
+  { playerId: 'ys8I-rqqG', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'jd0NgV-gW', 'ys8I-rqqG' ]
+Player Player (jd0NgV-gW) selected zone 4
+Available zones remaining: 1,2,3
+Ship already exists at e9 for jd0NgV-gW
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'ys8I-rqqG', isReady: false },
+  { id: 'jd0NgV-gW', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'ys8I-rqqG', isReady: true },
+  { id: 'jd0NgV-gW', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to jd0NgV-gW (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  ys8I-rqqG: 10 ships
+  jd0NgV-gW: 10 ships
+Broadcasting deploymentComplete - First turn: Player (jd0NgV-gW)
+Move request from jd0NgV-gW: ship jd0NgV-gW_1755372579412_0.894805847111261 from e10 to i6
+Ship jd0NgV-gW_1755372579412_0.894805847111261 moved from e10 to i6, new facing: 5 (colDiff: 4, rowDiff: -4, evenRow: true)
+Updated ship jd0NgV-gW_1755372579412_0.894805847111261 position to i6, facing: 5
+Broadcasting shipMoved: ship jd0NgV-gW_1755372579412_0.894805847111261 to i6
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=false, name=Player
+Checking player ys8I-rqqG: isEliminated=false
+Turn 2: Now ys8I-rqqG's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  8D3_CS0le: isEliminated=true, name=Player
+  krj3NIfDn: isEliminated=true, name=Player
+Checking player krj3NIfDn: isEliminated=true
+Checking player 8D3_CS0le: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Move request from ys8I-rqqG: ship ys8I-rqqG_1755372578573_0.37598220400051363 from g3 to i3
+Ship ys8I-rqqG_1755372578573_0.37598220400051363 moved from g3 to i3, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship ys8I-rqqG_1755372578573_0.37598220400051363 position to i3, facing: 0
+Broadcasting shipMoved: ship ys8I-rqqG_1755372578573_0.37598220400051363 to i3
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=false, name=Player
+Checking player jd0NgV-gW: isEliminated=false
+Turn 3: Now jd0NgV-gW's turn (Player)
+Move request from jd0NgV-gW: ship jd0NgV-gW_1755372579412_0.8022328632634799 from i8 to k6
+Ship jd0NgV-gW_1755372579412_0.8022328632634799 moved from i8 to k6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship jd0NgV-gW_1755372579412_0.8022328632634799 position to k6, facing: 5
+Broadcasting shipMoved: ship jd0NgV-gW_1755372579412_0.8022328632634799 to k6
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=false, name=Player
+Checking player ys8I-rqqG: isEliminated=false
+Turn 4: Now ys8I-rqqG's turn (Player)
+Move request from ys8I-rqqG: ship ys8I-rqqG_1755372578573_0.16073976598713235 from f3 to g3
+Ship ys8I-rqqG_1755372578573_0.16073976598713235 moved from f3 to g3, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship ys8I-rqqG_1755372578573_0.16073976598713235 position to g3, facing: 0
+Broadcasting shipMoved: ship ys8I-rqqG_1755372578573_0.16073976598713235 to g3
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=false, name=Player
+Checking player jd0NgV-gW: isEliminated=false
+Turn 5: Now jd0NgV-gW's turn (Player)
+Move request from jd0NgV-gW: ship jd0NgV-gW_1755372579412_0.17165606995524962 from h8 to h5
+Ship jd0NgV-gW_1755372579412_0.17165606995524962 moved from h8 to h5, new facing: 5 (colDiff: 0, rowDiff: -3, evenRow: true)
+Updated ship jd0NgV-gW_1755372579412_0.17165606995524962 position to h5, facing: 5
+Broadcasting shipMoved: ship jd0NgV-gW_1755372579412_0.17165606995524962 to h5
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=false, name=Player
+Checking player ys8I-rqqG: isEliminated=false
+Turn 6: Now ys8I-rqqG's turn (Player)
+Move request from ys8I-rqqG: ship ys8I-rqqG_1755372578573_0.9076092741797965 from i1 to j1
+Ship ys8I-rqqG_1755372578573_0.9076092741797965 moved from i1 to j1, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship ys8I-rqqG_1755372578573_0.9076092741797965 position to j1, facing: 0
+Broadcasting shipMoved: ship ys8I-rqqG_1755372578573_0.9076092741797965 to j1
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=false, name=Player
+Checking player jd0NgV-gW: isEliminated=false
+Turn 7: Now jd0NgV-gW's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  FEZ_Bgdz9: isEliminated=false, name=Player
+  M4Jm2fvea: isEliminated=true, name=Player
+Checking player FEZ_Bgdz9: isEliminated=false
+Turn 3: Now FEZ_Bgdz9's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+ys8I-rqqG left!
+jd0NgV-gW left!
+All human players left - disposing room
+Room SLvFmHK1b disposing...
+HexGameRoom 41fiGGNzJ created!
+4p9vAE8AC joined!
+nZMG5FqLr joined!
+Game started in room 41fiGGNzJ - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'nZMG5FqLr', playerName: 'Player', roll: 6 },
+  { playerId: '4p9vAE8AC', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'nZMG5FqLr', '4p9vAE8AC' ]
+Player Player (nZMG5FqLr) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '4p9vAE8AC', isReady: false },
+  { id: 'nZMG5FqLr', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '4p9vAE8AC', isReady: true },
+  { id: 'nZMG5FqLr', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to nZMG5FqLr (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  nZMG5FqLr: 10 ships
+  4p9vAE8AC: 10 ships
+Broadcasting deploymentComplete - First turn: Player (nZMG5FqLr)
+Move request from nZMG5FqLr: ship nZMG5FqLr_1755372727962_0.39798004407025056 from e10 to j5
+Ship nZMG5FqLr_1755372727962_0.39798004407025056 moved from e10 to j5, new facing: 5 (colDiff: 5, rowDiff: -5, evenRow: true)
+Updated ship nZMG5FqLr_1755372727962_0.39798004407025056 position to j5, facing: 5
+Broadcasting shipMoved: ship nZMG5FqLr_1755372727962_0.39798004407025056 to j5
+moveToNextTurn - Player states:
+  4p9vAE8AC: isEliminated=false, name=Player
+  nZMG5FqLr: isEliminated=false, name=Player
+Checking player 4p9vAE8AC: isEliminated=false
+Turn 2: Now 4p9vAE8AC's turn (Player)
+Move request from 4p9vAE8AC: ship 4p9vAE8AC_1755372728755_0.21558253548793083 from g3 to h3
+Ship 4p9vAE8AC_1755372728755_0.21558253548793083 moved from g3 to h3, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship 4p9vAE8AC_1755372728755_0.21558253548793083 position to h3, facing: 0
+Broadcasting shipMoved: ship 4p9vAE8AC_1755372728755_0.21558253548793083 to h3
+moveToNextTurn - Player states:
+  4p9vAE8AC: isEliminated=false, name=Player
+  nZMG5FqLr: isEliminated=false, name=Player
+Checking player nZMG5FqLr: isEliminated=false
+Turn 3: Now nZMG5FqLr's turn (Player)
+Move request from nZMG5FqLr: ship nZMG5FqLr_1755372727962_0.8394576620625676 from e9 to d9
+Ship nZMG5FqLr_1755372727962_0.8394576620625676 moved from e9 to d9, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship nZMG5FqLr_1755372727962_0.8394576620625676 position to d9, facing: 3
+Broadcasting shipMoved: ship nZMG5FqLr_1755372727962_0.8394576620625676 to d9
+moveToNextTurn - Player states:
+  4p9vAE8AC: isEliminated=false, name=Player
+  nZMG5FqLr: isEliminated=false, name=Player
+Checking player 4p9vAE8AC: isEliminated=false
+Turn 4: Now 4p9vAE8AC's turn (Player)
+Move request from 4p9vAE8AC: ship 4p9vAE8AC_1755372728755_0.8411067957426368 from i1 to k1
+Ship 4p9vAE8AC_1755372728755_0.8411067957426368 moved from i1 to k1, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship 4p9vAE8AC_1755372728755_0.8411067957426368 position to k1, facing: 0
+Broadcasting shipMoved: ship 4p9vAE8AC_1755372728755_0.8411067957426368 to k1
+moveToNextTurn - Player states:
+  4p9vAE8AC: isEliminated=false, name=Player
+  nZMG5FqLr: isEliminated=false, name=Player
+Checking player nZMG5FqLr: isEliminated=false
+Turn 5: Now nZMG5FqLr's turn (Player)
+Player Player (4p9vAE8AC) resigned
+Marking player Player (4p9vAE8AC) as eliminated: isEliminated=true
+Active players remaining: 1
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+nZMG5FqLr left!
+4p9vAE8AC left!
+All human players left - disposing room
+Room 41fiGGNzJ disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=false, name=Player
+  jd0NgV-gW: isEliminated=true, name=Player
+Checking player ys8I-rqqG: isEliminated=false
+Turn 8: Now ys8I-rqqG's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  FEZ_Bgdz9: isEliminated=true, name=Player
+  M4Jm2fvea: isEliminated=true, name=Player
+Checking player M4Jm2fvea: isEliminated=true
+Checking player FEZ_Bgdz9: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Game ended - disposing room
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  4p9vAE8AC: isEliminated=true, name=Player
+  nZMG5FqLr: isEliminated=true, name=Player
+Checking player 4p9vAE8AC: isEliminated=true
+Checking player nZMG5FqLr: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  ys8I-rqqG: isEliminated=true, name=Player
+  jd0NgV-gW: isEliminated=true, name=Player
+Checking player jd0NgV-gW: isEliminated=true
+Checking player ys8I-rqqG: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom eozL1Qd6N created!
+zorjGykZC joined!
+PJGZlDKaU joined!
+Game started in room eozL1Qd6N - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'zorjGykZC', playerName: 'Player', roll: 5 },
+  { playerId: 'PJGZlDKaU', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'zorjGykZC', 'PJGZlDKaU' ]
+Player Player (zorjGykZC) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'zorjGykZC', isReady: true },
+  { id: 'PJGZlDKaU', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'zorjGykZC', isReady: true },
+  { id: 'PJGZlDKaU', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to zorjGykZC (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  zorjGykZC: 10 ships
+  PJGZlDKaU: 10 ships
+Broadcasting deploymentComplete - First turn: Player (zorjGykZC)
+Move request from zorjGykZC: ship zorjGykZC_1755376694316_0.057915197904382376 from g8 to j5
+Ship zorjGykZC_1755376694316_0.057915197904382376 moved from g8 to j5, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship zorjGykZC_1755376694316_0.057915197904382376 position to j5, facing: 5
+Broadcasting shipMoved: ship zorjGykZC_1755376694316_0.057915197904382376 to j5
+moveToNextTurn - Player states:
+  zorjGykZC: isEliminated=false, name=Player
+  PJGZlDKaU: isEliminated=false, name=Player
+Checking player PJGZlDKaU: isEliminated=false
+Turn 2: Now PJGZlDKaU's turn (Player)
+Move request from PJGZlDKaU: ship PJGZlDKaU_1755376695049_0.2381726420574446 from g3 to k3
+Ship PJGZlDKaU_1755376695049_0.2381726420574446 moved from g3 to k3, new facing: 0 (colDiff: 4, rowDiff: 0, evenRow: false)
+Updated ship PJGZlDKaU_1755376695049_0.2381726420574446 position to k3, facing: 0
+Broadcasting shipMoved: ship PJGZlDKaU_1755376695049_0.2381726420574446 to k3
+moveToNextTurn - Player states:
+  zorjGykZC: isEliminated=false, name=Player
+  PJGZlDKaU: isEliminated=false, name=Player
+Checking player zorjGykZC: isEliminated=false
+Turn 3: Now zorjGykZC's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  zorjGykZC: isEliminated=true, name=Player
+  PJGZlDKaU: isEliminated=false, name=Player
+Checking player PJGZlDKaU: isEliminated=false
+Turn 4: Now PJGZlDKaU's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+HexGameRoom WETsfCgsl created!
+3xcy29eh2 joined!
+BMjhikT21 joined!
+Game ended - disposing room
+PJGZlDKaU left!
+zorjGykZC left!
+All human players left - disposing room
+Room eozL1Qd6N disposing...
+Game started in room WETsfCgsl - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'BMjhikT21', playerName: 'Player', roll: 4 },
+  { playerId: '3xcy29eh2', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 4
+Zone selection order: [ 'BMjhikT21', '3xcy29eh2' ]
+Player Player (BMjhikT21) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '3xcy29eh2', isReady: true },
+  { id: 'BMjhikT21', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: '3xcy29eh2', isReady: true },
+  { id: 'BMjhikT21', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to BMjhikT21 (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  3xcy29eh2: 10 ships
+  BMjhikT21: 10 ships
+Broadcasting deploymentComplete - First turn: Player (BMjhikT21)
+Move request from BMjhikT21: ship BMjhikT21_1755376976195_0.27162015374775006 from g8 to g7
+Ship BMjhikT21_1755376976195_0.27162015374775006 moved from g8 to g7, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship BMjhikT21_1755376976195_0.27162015374775006 position to g7, facing: 5
+Broadcasting shipMoved: ship BMjhikT21_1755376976195_0.27162015374775006 to g7
+moveToNextTurn - Player states:
+  3xcy29eh2: isEliminated=false, name=Player
+  BMjhikT21: isEliminated=false, name=Player
+Checking player 3xcy29eh2: isEliminated=false
+Turn 2: Now 3xcy29eh2's turn (Player)
+Move request from 3xcy29eh2: ship 3xcy29eh2_1755376975507_0.05257314596896112 from e4 to d5
+Ship 3xcy29eh2_1755376975507_0.05257314596896112 moved from e4 to d5, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: true)
+Updated ship 3xcy29eh2_1755376975507_0.05257314596896112 position to d5, facing: 2
+Broadcasting shipMoved: ship 3xcy29eh2_1755376975507_0.05257314596896112 to d5
+moveToNextTurn - Player states:
+  3xcy29eh2: isEliminated=false, name=Player
+  BMjhikT21: isEliminated=false, name=Player
+Checking player BMjhikT21: isEliminated=false
+Turn 3: Now BMjhikT21's turn (Player)
+Move request from BMjhikT21: ship BMjhikT21_1755376976195_0.753634660872831 from d10 to f8
+Ship BMjhikT21_1755376976195_0.753634660872831 moved from d10 to f8, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship BMjhikT21_1755376976195_0.753634660872831 position to f8, facing: 5
+Broadcasting shipMoved: ship BMjhikT21_1755376976195_0.753634660872831 to f8
+moveToNextTurn - Player states:
+  3xcy29eh2: isEliminated=false, name=Player
+  BMjhikT21: isEliminated=false, name=Player
+Checking player 3xcy29eh2: isEliminated=false
+Turn 4: Now 3xcy29eh2's turn (Player)
+Move request from 3xcy29eh2: ship 3xcy29eh2_1755376975507_0.2984702232388521 from h2 to h4
+Ship 3xcy29eh2_1755376975507_0.2984702232388521 moved from h2 to h4, new facing: 1 (colDiff: 0, rowDiff: 2, evenRow: true)
+Updated ship 3xcy29eh2_1755376975507_0.2984702232388521 position to h4, facing: 1
+Broadcasting shipMoved: ship 3xcy29eh2_1755376975507_0.2984702232388521 to h4
+moveToNextTurn - Player states:
+  3xcy29eh2: isEliminated=false, name=Player
+  BMjhikT21: isEliminated=false, name=Player
+Checking player BMjhikT21: isEliminated=false
+Turn 5: Now BMjhikT21's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  zorjGykZC: isEliminated=true, name=Player
+  PJGZlDKaU: isEliminated=true, name=Player
+Checking player zorjGykZC: isEliminated=true
+Checking player PJGZlDKaU: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  3xcy29eh2: isEliminated=false, name=Player
+  BMjhikT21: isEliminated=true, name=Player
+Checking player 3xcy29eh2: isEliminated=false
+Turn 6: Now 3xcy29eh2's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+BMjhikT21 left!
+3xcy29eh2 left!
+All human players left - disposing room
+Room WETsfCgsl disposing...
+HexGameRoom LyDtAg097 created!
+Uc5tsgfvP joined!
+8lpBG4_lr joined!
+Game started in room LyDtAg097 - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: '8lpBG4_lr', playerName: 'Player', roll: 6 },
+  { playerId: 'Uc5tsgfvP', playerName: 'Player', roll: 5 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ '8lpBG4_lr', 'Uc5tsgfvP' ]
+Player Player (8lpBG4_lr) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'Uc5tsgfvP', isReady: false },
+  { id: '8lpBG4_lr', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'Uc5tsgfvP', isReady: true },
+  { id: '8lpBG4_lr', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to 8lpBG4_lr (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  8lpBG4_lr: 10 ships
+  Uc5tsgfvP: 10 ships
+Broadcasting deploymentComplete - First turn: Player (8lpBG4_lr)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.12522762981655267 from g8 to j5
+Ship 8lpBG4_lr_1755377296014_0.12522762981655267 moved from g8 to j5, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship 8lpBG4_lr_1755377296014_0.12522762981655267 position to j5, facing: 5
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.12522762981655267 to j5
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 2: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.15337629189331703 from g3 to k3
+Ship Uc5tsgfvP_1755377296681_0.15337629189331703 moved from g3 to k3, new facing: 0 (colDiff: 4, rowDiff: 0, evenRow: false)
+Updated ship Uc5tsgfvP_1755377296681_0.15337629189331703 position to k3, facing: 0
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.15337629189331703 to k3
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 3: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.12522762981655267 from j5 to j4
+Ship 8lpBG4_lr_1755377296014_0.12522762981655267 moved from j5 to j4, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship 8lpBG4_lr_1755377296014_0.12522762981655267 position to j4, facing: 5
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.12522762981655267 to j4
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 4: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.15337629189331703 from k3 to k6
+Ship Uc5tsgfvP_1755377296681_0.15337629189331703 moved from k3 to k6, new facing: 1 (colDiff: 0, rowDiff: 3, evenRow: false)
+Updated ship Uc5tsgfvP_1755377296681_0.15337629189331703 position to k6, facing: 1
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.15337629189331703 to k6
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 5: Now 8lpBG4_lr's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  3xcy29eh2: isEliminated=true, name=Player
+  BMjhikT21: isEliminated=true, name=Player
+Checking player BMjhikT21: isEliminated=true
+Checking player 3xcy29eh2: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.12522762981655267 from j4 to j7
+Ship 8lpBG4_lr_1755377296014_0.12522762981655267 moved from j4 to j7, new facing: 1 (colDiff: 0, rowDiff: 3, evenRow: true)
+Updated ship 8lpBG4_lr_1755377296014_0.12522762981655267 position to j7, facing: 1
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.12522762981655267 to j7
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 6: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.15337629189331703 from k6 to k5
+Ship Uc5tsgfvP_1755377296681_0.15337629189331703 moved from k6 to k5, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship Uc5tsgfvP_1755377296681_0.15337629189331703 position to k5, facing: 5
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.15337629189331703 to k5
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 7: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.12522762981655267 from j7 to j6
+Ship 8lpBG4_lr_1755377296014_0.12522762981655267 moved from j7 to j6, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship 8lpBG4_lr_1755377296014_0.12522762981655267 position to j6, facing: 5
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.12522762981655267 to j6
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 8: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.15337629189331703 from k5 to k4
+Ship Uc5tsgfvP_1755377296681_0.15337629189331703 moved from k5 to k4, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship Uc5tsgfvP_1755377296681_0.15337629189331703 position to k4, facing: 5
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.15337629189331703 to k4
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 9: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.12522762981655267 from j6 to j5
+Ship 8lpBG4_lr_1755377296014_0.12522762981655267 moved from j6 to j5, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship 8lpBG4_lr_1755377296014_0.12522762981655267 position to j5, facing: 5
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.12522762981655267 to j5
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 10: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.15337629189331703 from k4 to k3
+Ship Uc5tsgfvP_1755377296681_0.15337629189331703 moved from k4 to k3, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship Uc5tsgfvP_1755377296681_0.15337629189331703 position to k3, facing: 5
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.15337629189331703 to k3
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 11: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.06592202886058973 from d11 to d10
+Ship 8lpBG4_lr_1755377296014_0.06592202886058973 moved from d11 to d10, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship 8lpBG4_lr_1755377296014_0.06592202886058973 position to d10, facing: 5
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.06592202886058973 to d10
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 12: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.15337629189331703 from k3 to k2
+Ship Uc5tsgfvP_1755377296681_0.15337629189331703 moved from k3 to k2, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship Uc5tsgfvP_1755377296681_0.15337629189331703 position to k2, facing: 5
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.15337629189331703 to k2
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 13: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.3775951265158024 from e9 to e10
+Ship 8lpBG4_lr_1755377296014_0.3775951265158024 moved from e9 to e10, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship 8lpBG4_lr_1755377296014_0.3775951265158024 position to e10, facing: 1
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.3775951265158024 to e10
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 14: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.5352768344370273 from e3 to d3
+Ship Uc5tsgfvP_1755377296681_0.5352768344370273 moved from e3 to d3, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship Uc5tsgfvP_1755377296681_0.5352768344370273 position to d3, facing: 3
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.5352768344370273 to d3
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 15: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.06592202886058973 from d10 to d8
+Ship 8lpBG4_lr_1755377296014_0.06592202886058973 moved from d10 to d8, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: true)
+Updated ship 8lpBG4_lr_1755377296014_0.06592202886058973 position to d8, facing: 5
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.06592202886058973 to d8
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 16: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.4674526721280061 from e4 to d5
+Ship Uc5tsgfvP_1755377296681_0.4674526721280061 moved from e4 to d5, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: true)
+Updated ship Uc5tsgfvP_1755377296681_0.4674526721280061 position to d5, facing: 2
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.4674526721280061 to d5
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 17: Now 8lpBG4_lr's turn (Player)
+Move request from 8lpBG4_lr: ship 8lpBG4_lr_1755377296014_0.06592202886058973 from d8 to c9
+Ship 8lpBG4_lr_1755377296014_0.06592202886058973 moved from d8 to c9, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: true)
+Updated ship 8lpBG4_lr_1755377296014_0.06592202886058973 position to c9, facing: 2
+Broadcasting shipMoved: ship 8lpBG4_lr_1755377296014_0.06592202886058973 to c9
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 18: Now Uc5tsgfvP's turn (Player)
+Move request from Uc5tsgfvP: ship Uc5tsgfvP_1755377296681_0.4674526721280061 from d5 to c6
+Ship Uc5tsgfvP_1755377296681_0.4674526721280061 moved from d5 to c6, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: false)
+Updated ship Uc5tsgfvP_1755377296681_0.4674526721280061 position to c6, facing: 2
+Broadcasting shipMoved: ship Uc5tsgfvP_1755377296681_0.4674526721280061 to c6
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=false, name=Player
+Checking player 8lpBG4_lr: isEliminated=false
+Turn 19: Now 8lpBG4_lr's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=false, name=Player
+  8lpBG4_lr: isEliminated=true, name=Player
+Checking player Uc5tsgfvP: isEliminated=false
+Turn 20: Now Uc5tsgfvP's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+8lpBG4_lr left!
+Uc5tsgfvP left!
+All human players left - disposing room
+Room LyDtAg097 disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  Uc5tsgfvP: isEliminated=true, name=Player
+  8lpBG4_lr: isEliminated=true, name=Player
+Checking player 8lpBG4_lr: isEliminated=true
+Checking player Uc5tsgfvP: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom tDR5TanyH created!
+jUwMbknfA joined!
+QWJ9FZrB4 joined!
+Game started in room tDR5TanyH - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'jUwMbknfA', playerName: 'Player', roll: 6 },
+  { playerId: 'QWJ9FZrB4', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'jUwMbknfA', 'QWJ9FZrB4' ]
+Player Player (jUwMbknfA) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'jUwMbknfA', isReady: true },
+  { id: 'QWJ9FZrB4', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'jUwMbknfA', isReady: true },
+  { id: 'QWJ9FZrB4', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to jUwMbknfA (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  jUwMbknfA: 10 ships
+  QWJ9FZrB4: 10 ships
+Broadcasting deploymentComplete - First turn: Player (jUwMbknfA)
+Move request from jUwMbknfA: ship jUwMbknfA_1755378196477_0.054299203694604836 from f9 to i6
+Ship jUwMbknfA_1755378196477_0.054299203694604836 moved from f9 to i6, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: false)
+Updated ship jUwMbknfA_1755378196477_0.054299203694604836 position to i6, facing: 5
+Broadcasting shipMoved: ship jUwMbknfA_1755378196477_0.054299203694604836 to i6
+moveToNextTurn - Player states:
+  jUwMbknfA: isEliminated=false, name=Player
+  QWJ9FZrB4: isEliminated=false, name=Player
+Checking player QWJ9FZrB4: isEliminated=false
+Turn 2: Now QWJ9FZrB4's turn (Player)
+Move request from QWJ9FZrB4: ship QWJ9FZrB4_1755378197327_0.43709091949120316 from g3 to j3
+Ship QWJ9FZrB4_1755378197327_0.43709091949120316 moved from g3 to j3, new facing: 0 (colDiff: 3, rowDiff: 0, evenRow: false)
+Updated ship QWJ9FZrB4_1755378197327_0.43709091949120316 position to j3, facing: 0
+Broadcasting shipMoved: ship QWJ9FZrB4_1755378197327_0.43709091949120316 to j3
+moveToNextTurn - Player states:
+  jUwMbknfA: isEliminated=false, name=Player
+  QWJ9FZrB4: isEliminated=false, name=Player
+Checking player jUwMbknfA: isEliminated=false
+Turn 3: Now jUwMbknfA's turn (Player)
+Move request from jUwMbknfA: ship jUwMbknfA_1755378196477_0.054299203694604836 from i6 to i5
+Ship jUwMbknfA_1755378196477_0.054299203694604836 moved from i6 to i5, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship jUwMbknfA_1755378196477_0.054299203694604836 position to i5, facing: 5
+Broadcasting shipMoved: ship jUwMbknfA_1755378196477_0.054299203694604836 to i5
+moveToNextTurn - Player states:
+  jUwMbknfA: isEliminated=false, name=Player
+  QWJ9FZrB4: isEliminated=false, name=Player
+Checking player QWJ9FZrB4: isEliminated=false
+Turn 4: Now QWJ9FZrB4's turn (Player)
+Move request from QWJ9FZrB4: ship QWJ9FZrB4_1755378197327_0.43709091949120316 from j3 to i3
+Ship QWJ9FZrB4_1755378197327_0.43709091949120316 moved from j3 to i3, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship QWJ9FZrB4_1755378197327_0.43709091949120316 position to i3, facing: 3
+Broadcasting shipMoved: ship QWJ9FZrB4_1755378197327_0.43709091949120316 to i3
+moveToNextTurn - Player states:
+  jUwMbknfA: isEliminated=false, name=Player
+  QWJ9FZrB4: isEliminated=false, name=Player
+Checking player jUwMbknfA: isEliminated=false
+Turn 5: Now jUwMbknfA's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  jUwMbknfA: isEliminated=true, name=Player
+  QWJ9FZrB4: isEliminated=false, name=Player
+Checking player QWJ9FZrB4: isEliminated=false
+Turn 6: Now QWJ9FZrB4's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+QWJ9FZrB4 left!
+jUwMbknfA left!
+All human players left - disposing room
+Room tDR5TanyH disposing...
+HexGameRoom P81apbSzu created!
+iHNr5acbX joined!
+KwDUjq47Z joined!
+Game started in room P81apbSzu - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'KwDUjq47Z', playerName: 'Player', roll: 5 },
+  { playerId: 'iHNr5acbX', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'KwDUjq47Z', 'iHNr5acbX' ]
+Player Player (KwDUjq47Z) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'iHNr5acbX', isReady: true },
+  { id: 'KwDUjq47Z', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'iHNr5acbX', isReady: true },
+  { id: 'KwDUjq47Z', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to KwDUjq47Z (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  iHNr5acbX: 10 ships
+  KwDUjq47Z: 10 ships
+Broadcasting deploymentComplete - First turn: Player (KwDUjq47Z)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from g8 to i6
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from g8 to i6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to i6, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to i6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 2: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from g3 to j3
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from g3 to j3, new facing: 0 (colDiff: 3, rowDiff: 0, evenRow: false)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j3, facing: 0
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j3
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 3: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from i6 to k4
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from i6 to k4, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to k4, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to k4
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 4: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j3 to j6
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j3 to j6, new facing: 1 (colDiff: 0, rowDiff: 3, evenRow: false)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j6, facing: 1
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 5: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from k4 to j4
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from k4 to j4, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to j4, facing: 3
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to j4
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 6: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j6 to h6
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j6 to h6, new facing: 3 (colDiff: -2, rowDiff: 0, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to h6, facing: 3
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to h6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 7: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from j4 to k3
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from j4 to k3, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to k3, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to k3
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 8: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from h6 to j4
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from h6 to j4, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j4, facing: 5
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j4
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 9: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from k3 to k5
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from k3 to k5, new facing: 1 (colDiff: 0, rowDiff: 2, evenRow: false)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to k5, facing: 1
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to k5
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 10: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j4 to j6
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j4 to j6, new facing: 1 (colDiff: 0, rowDiff: 2, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j6, facing: 1
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 11: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from k5 to i5
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from k5 to i5, new facing: 3 (colDiff: -2, rowDiff: 0, evenRow: false)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to i5, facing: 3
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to i5
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 12: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j6 to i6
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j6 to i6, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to i6, facing: 3
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to i6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 13: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.2254863064510324 from i5 to i4
+Ship KwDUjq47Z_1755378478072_0.2254863064510324 moved from i5 to i4, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship KwDUjq47Z_1755378478072_0.2254863064510324 position to i4, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.2254863064510324 to i4
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 14: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from i6 to i4
+Combat! Ship iHNr5acbX_1755378477284_0.21103277576503654 destroyed KwDUjq47Z_1755378478072_0.2254863064510324 at i4
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from i6 to i4, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to i4, facing: 5
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to i4
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 15: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.362814767876362 from f9 to g8
+Ship KwDUjq47Z_1755378478072_0.362814767876362 moved from f9 to g8, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: false)
+Updated ship KwDUjq47Z_1755378478072_0.362814767876362 position to g8, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.362814767876362 to g8
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 16: Now iHNr5acbX's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  jUwMbknfA: isEliminated=true, name=Player
+  QWJ9FZrB4: isEliminated=true, name=Player
+Checking player jUwMbknfA: isEliminated=true
+Checking player QWJ9FZrB4: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from i4 to k4
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from i4 to k4, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to k4, facing: 0
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to k4
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 17: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.362814767876362 from g8 to h7
+Ship KwDUjq47Z_1755378478072_0.362814767876362 moved from g8 to h7, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.362814767876362 position to h7, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.362814767876362 to h7
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 18: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from k4 to j5
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from k4 to j5, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j5, facing: 2
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j5
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 19: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.362814767876362 from h7 to i6
+Ship KwDUjq47Z_1755378478072_0.362814767876362 moved from h7 to i6, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: false)
+Updated ship KwDUjq47Z_1755378478072_0.362814767876362 position to i6, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.362814767876362 to i6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 20: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j5 to j3
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j5 to j3, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: false)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j3, facing: 5
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j3
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 21: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.362814767876362 from i6 to j5
+Ship KwDUjq47Z_1755378478072_0.362814767876362 moved from i6 to j5, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.362814767876362 position to j5, facing: 5
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.362814767876362 to j5
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 22: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j3 to j1
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j3 to j1, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: false)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j1, facing: 5
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j1
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 23: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.362814767876362 from j5 to j6
+Ship KwDUjq47Z_1755378478072_0.362814767876362 moved from j5 to j6, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship KwDUjq47Z_1755378478072_0.362814767876362 position to j6, facing: 1
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.362814767876362 to j6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 24: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j1 to j2
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j1 to j2, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to j2, facing: 1
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to j2
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 25: Now KwDUjq47Z's turn (Player)
+Move request from KwDUjq47Z: ship KwDUjq47Z_1755378478072_0.362814767876362 from j6 to i6
+Ship KwDUjq47Z_1755378478072_0.362814767876362 moved from j6 to i6, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship KwDUjq47Z_1755378478072_0.362814767876362 position to i6, facing: 3
+Broadcasting shipMoved: ship KwDUjq47Z_1755378478072_0.362814767876362 to i6
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 26: Now iHNr5acbX's turn (Player)
+Move request from iHNr5acbX: ship iHNr5acbX_1755378477284_0.21103277576503654 from j2 to i3
+Ship iHNr5acbX_1755378477284_0.21103277576503654 moved from j2 to i3, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: true)
+Updated ship iHNr5acbX_1755378477284_0.21103277576503654 position to i3, facing: 2
+Broadcasting shipMoved: ship iHNr5acbX_1755378477284_0.21103277576503654 to i3
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=false, name=Player
+Checking player KwDUjq47Z: isEliminated=false
+Turn 27: Now KwDUjq47Z's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=false, name=Player
+  KwDUjq47Z: isEliminated=true, name=Player
+Checking player iHNr5acbX: isEliminated=false
+Turn 28: Now iHNr5acbX's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+iHNr5acbX left!
+KwDUjq47Z left!
+All human players left - disposing room
+Room P81apbSzu disposing...
+Game ended - disposing room
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  iHNr5acbX: isEliminated=true, name=Player
+  KwDUjq47Z: isEliminated=true, name=Player
+Checking player KwDUjq47Z: isEliminated=true
+Checking player iHNr5acbX: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom vh9KZ3Bxx created!
+9txd6N3As joined!
+UDZCwPQzF joined!
+Game started in room vh9KZ3Bxx - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'UDZCwPQzF', playerName: 'Player', roll: 6 },
+  { playerId: '9txd6N3As', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'UDZCwPQzF', '9txd6N3As' ]
+2:50:24 PM [tsx] change in ./src/app.config.ts Restarting...
+UDZCwPQzF left!
+Player left during zone selection - disposing room
+9txd6N3As left!
+Player left during zone selection - disposing room
+Room vh9KZ3Bxx disposing...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  suppress all logs with { quiet: true }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+2:50:31 PM [tsx] change in ./src/app.config.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  override existing env vars with { override: true }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
+HexGameRoom 8b5vOPsBq created!
+S9rETO2l9 joined!
+AwFK3V6_f joined!
+Game started in room 8b5vOPsBq - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'S9rETO2l9', playerName: 'Player', roll: 3 },
+  { playerId: 'AwFK3V6_f', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ 'S9rETO2l9', 'AwFK3V6_f' ]
+S9rETO2l9 left!
+Player left during zone selection - disposing room
+AwFK3V6_f left!
+Player left during zone selection - disposing room
+Room 8b5vOPsBq disposing...
+HexGameRoom 7bYv5M5_u created!
+oPnebuCzO joined!
+Hz8pbfBEB joined!
+Game started in room 7bYv5M5_u - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'Hz8pbfBEB', playerName: 'Player', roll: 3 },
+  { playerId: 'oPnebuCzO', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ 'Hz8pbfBEB', 'oPnebuCzO' ]
+Player Player (Hz8pbfBEB) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'oPnebuCzO', isReady: false },
+  { id: 'Hz8pbfBEB', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'oPnebuCzO', isReady: true },
+  { id: 'Hz8pbfBEB', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to Hz8pbfBEB (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  oPnebuCzO: 10 ships
+  Hz8pbfBEB: 10 ships
+Broadcasting deploymentComplete - First turn: Player (Hz8pbfBEB)
+Move request from Hz8pbfBEB: ship Hz8pbfBEB_1755382260871_0.031380943626609925 from g8 to i6
+Ship Hz8pbfBEB_1755382260871_0.031380943626609925 moved from g8 to i6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship Hz8pbfBEB_1755382260871_0.031380943626609925 position to i6, facing: 5
+Broadcasting shipMoved: ship Hz8pbfBEB_1755382260871_0.031380943626609925 to i6
+moveToNextTurn - Player states:
+  oPnebuCzO: isEliminated=false, name=Player
+  Hz8pbfBEB: isEliminated=false, name=Player
+Checking player oPnebuCzO: isEliminated=false
+Turn 2: Now oPnebuCzO's turn (Player)
+Move request from oPnebuCzO: ship oPnebuCzO_1755382260201_0.6311989159884035 from f3 to i3
+Ship oPnebuCzO_1755382260201_0.6311989159884035 moved from f3 to i3, new facing: 0 (colDiff: 3, rowDiff: 0, evenRow: false)
+Updated ship oPnebuCzO_1755382260201_0.6311989159884035 position to i3, facing: 0
+Broadcasting shipMoved: ship oPnebuCzO_1755382260201_0.6311989159884035 to i3
+moveToNextTurn - Player states:
+  oPnebuCzO: isEliminated=false, name=Player
+  Hz8pbfBEB: isEliminated=false, name=Player
+Checking player Hz8pbfBEB: isEliminated=false
+Turn 3: Now Hz8pbfBEB's turn (Player)
+Move request from Hz8pbfBEB: ship Hz8pbfBEB_1755382260871_0.031380943626609925 from i6 to i5
+Ship Hz8pbfBEB_1755382260871_0.031380943626609925 moved from i6 to i5, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship Hz8pbfBEB_1755382260871_0.031380943626609925 position to i5, facing: 5
+Broadcasting shipMoved: ship Hz8pbfBEB_1755382260871_0.031380943626609925 to i5
+moveToNextTurn - Player states:
+  oPnebuCzO: isEliminated=false, name=Player
+  Hz8pbfBEB: isEliminated=false, name=Player
+Checking player oPnebuCzO: isEliminated=false
+Turn 4: Now oPnebuCzO's turn (Player)
+Move request from oPnebuCzO: ship oPnebuCzO_1755382260201_0.6311989159884035 from i3 to i4
+Ship oPnebuCzO_1755382260201_0.6311989159884035 moved from i3 to i4, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship oPnebuCzO_1755382260201_0.6311989159884035 position to i4, facing: 1
+Broadcasting shipMoved: ship oPnebuCzO_1755382260201_0.6311989159884035 to i4
+moveToNextTurn - Player states:
+  oPnebuCzO: isEliminated=false, name=Player
+  Hz8pbfBEB: isEliminated=false, name=Player
+Checking player Hz8pbfBEB: isEliminated=false
+Turn 5: Now Hz8pbfBEB's turn (Player)
+Move request from Hz8pbfBEB: ship Hz8pbfBEB_1755382260871_0.031380943626609925 from i5 to i4
+Combat! Ship Hz8pbfBEB_1755382260871_0.031380943626609925 destroyed oPnebuCzO_1755382260201_0.6311989159884035 at i4
+Ship Hz8pbfBEB_1755382260871_0.031380943626609925 moved from i5 to i4, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship Hz8pbfBEB_1755382260871_0.031380943626609925 position to i4, facing: 5
+Broadcasting shipMoved: ship Hz8pbfBEB_1755382260871_0.031380943626609925 to i4
+moveToNextTurn - Player states:
+  oPnebuCzO: isEliminated=false, name=Player
+  Hz8pbfBEB: isEliminated=false, name=Player
+Checking player oPnebuCzO: isEliminated=false
+Turn 6: Now oPnebuCzO's turn (Player)
+Player Player (oPnebuCzO) resigned
+Marking player Player (oPnebuCzO) as eliminated: isEliminated=true
+Active players remaining: 1
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+Hz8pbfBEB left!
+oPnebuCzO left!
+All human players left - disposing room
+Room 7bYv5M5_u disposing...
+Turn timer expired for Player - eliminating player
+HexGameRoom MN8rAzJpA created!
+nBK7UkxDB joined!
+yhXxJxQgv joined!
+Game started in room MN8rAzJpA - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'yhXxJxQgv', playerName: 'Player', roll: 6 },
+  { playerId: 'nBK7UkxDB', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'yhXxJxQgv', 'nBK7UkxDB' ]
+Player Player (yhXxJxQgv) selected zone 4
+Available zones remaining: 1,2,3
+Ship already exists at i8 for yhXxJxQgv
+Ship already exists at f11 for yhXxJxQgv
+Ship already exists at h8 for yhXxJxQgv
+Ship already exists at e11 for yhXxJxQgv
+Ship already exists at f10 for yhXxJxQgv
+Ship already exists at g8 for yhXxJxQgv
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'nBK7UkxDB', isReady: false },
+  { id: 'yhXxJxQgv', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'nBK7UkxDB', isReady: true },
+  { id: 'yhXxJxQgv', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to yhXxJxQgv (dice roll winner)
+Broadcasting deploymentComplete with 24 ships
+Ship breakdown by owner:
+  nBK7UkxDB: 10 ships
+  yhXxJxQgv: 14 ships
+Broadcasting deploymentComplete - First turn: Player (yhXxJxQgv)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382884654_0.8856381027179279 from g8 to i6
+Ship yhXxJxQgv_1755382884654_0.8856381027179279 moved from g8 to i6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship yhXxJxQgv_1755382884654_0.8856381027179279 position to i6, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382884654_0.8856381027179279 to i6
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 2: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880204_0.3881238785549226 from g3 to h3
+Ship nBK7UkxDB_1755382880204_0.3881238785549226 moved from g3 to h3, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship nBK7UkxDB_1755382880204_0.3881238785549226 position to h3, facing: 0
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880204_0.3881238785549226 to h3
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 3: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382884654_0.8856381027179279 from i6 to i5
+Ship yhXxJxQgv_1755382884654_0.8856381027179279 moved from i6 to i5, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship yhXxJxQgv_1755382884654_0.8856381027179279 position to i5, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382884654_0.8856381027179279 to i5
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 4: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.897765056948864 from d4 to d6
+Ship nBK7UkxDB_1755382880203_0.897765056948864 moved from d4 to d6, new facing: 1 (colDiff: 0, rowDiff: 2, evenRow: true)
+Updated ship nBK7UkxDB_1755382880203_0.897765056948864 position to d6, facing: 1
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.897765056948864 to d6
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 5: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881220_0.6691320822881093 from e9 to c9
+Ship yhXxJxQgv_1755382881220_0.6691320822881093 moved from e9 to c9, new facing: 3 (colDiff: -2, rowDiff: 0, evenRow: false)
+Updated ship yhXxJxQgv_1755382881220_0.6691320822881093 position to c9, facing: 3
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881220_0.6691320822881093 to c9
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 6: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.897765056948864 from d6 to c6
+Ship nBK7UkxDB_1755382880203_0.897765056948864 moved from d6 to c6, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship nBK7UkxDB_1755382880203_0.897765056948864 position to c6, facing: 3
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.897765056948864 to c6
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 7: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382891910_0.577798959621695 from c11 to b11
+Ship yhXxJxQgv_1755382891910_0.577798959621695 moved from c11 to b11, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship yhXxJxQgv_1755382891910_0.577798959621695 position to b11, facing: 3
+Broadcasting shipMoved: ship yhXxJxQgv_1755382891910_0.577798959621695 to b11
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 8: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.897765056948864 from c6 to b6
+Ship nBK7UkxDB_1755382880203_0.897765056948864 moved from c6 to b6, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship nBK7UkxDB_1755382880203_0.897765056948864 position to b6, facing: 3
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.897765056948864 to b6
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 9: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382891910_0.8589101941684996 from d10 to d9
+Ship yhXxJxQgv_1755382891910_0.8589101941684996 moved from d10 to d9, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship yhXxJxQgv_1755382891910_0.8589101941684996 position to d9, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382891910_0.8589101941684996 to d9
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 10: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.7717890933431297 from f2 to f3
+Ship nBK7UkxDB_1755382880203_0.7717890933431297 moved from f2 to f3, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: true)
+Updated ship nBK7UkxDB_1755382880203_0.7717890933431297 position to f3, facing: 1
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.7717890933431297 to f3
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 11: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.3933902657474011 from f9 to k4
+Ship yhXxJxQgv_1755382881221_0.3933902657474011 moved from f9 to k4, new facing: 5 (colDiff: 5, rowDiff: -5, evenRow: false)
+Updated ship yhXxJxQgv_1755382881221_0.3933902657474011 position to k4, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.3933902657474011 to k4
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 12: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.8345440615124993 from d3 to d4
+Ship nBK7UkxDB_1755382880203_0.8345440615124993 moved from d3 to d4, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.8345440615124993 position to d4, facing: 1
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.8345440615124993 to d4
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 13: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.3281167280039683 from h8 to h5
+Ship yhXxJxQgv_1755382881221_0.3281167280039683 moved from h8 to h5, new facing: 5 (colDiff: 0, rowDiff: -3, evenRow: true)
+Updated ship yhXxJxQgv_1755382881221_0.3281167280039683 position to h5, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.3281167280039683 to h5
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 14: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.7717890933431297 from f3 to d5
+Ship nBK7UkxDB_1755382880203_0.7717890933431297 moved from f3 to d5, new facing: 2 (colDiff: -2, rowDiff: 2, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.7717890933431297 position to d5, facing: 2
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.7717890933431297 to d5
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 15: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.6152509795396879 from g9 to h8
+Ship yhXxJxQgv_1755382881221_0.6152509795396879 moved from g9 to h8, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: false)
+Updated ship yhXxJxQgv_1755382881221_0.6152509795396879 position to h8, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.6152509795396879 to h8
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 16: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.13438322625802157 from i1 to k1
+Ship nBK7UkxDB_1755382880203_0.13438322625802157 moved from i1 to k1, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.13438322625802157 position to k1, facing: 0
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.13438322625802157 to k1
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 17: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.33292035872013925 from g10 to h9
+Ship yhXxJxQgv_1755382881221_0.33292035872013925 moved from g10 to h9, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship yhXxJxQgv_1755382881221_0.33292035872013925 position to h9, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.33292035872013925 to h9
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 18: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.7717890933431297 from d5 to c6
+Ship nBK7UkxDB_1755382880203_0.7717890933431297 moved from d5 to c6, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.7717890933431297 position to c6, facing: 2
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.7717890933431297 to c6
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 19: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382891910_0.644912648942801 from e10 to e8
+Ship yhXxJxQgv_1755382891910_0.644912648942801 moved from e10 to e8, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: true)
+Updated ship yhXxJxQgv_1755382891910_0.644912648942801 position to e8, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382891910_0.644912648942801 to e8
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 20: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.13438322625802157 from k1 to k2
+Ship nBK7UkxDB_1755382880203_0.13438322625802157 moved from k1 to k2, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.13438322625802157 position to k2, facing: 1
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.13438322625802157 to k2
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 21: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382891910_0.577798959621695 from b11 to b9
+Ship yhXxJxQgv_1755382891910_0.577798959621695 moved from b11 to b9, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: false)
+Updated ship yhXxJxQgv_1755382891910_0.577798959621695 position to b9, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382891910_0.577798959621695 to b9
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 22: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.22509147941371221 from e2 to e3
+Ship nBK7UkxDB_1755382880203_0.22509147941371221 moved from e2 to e3, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: true)
+Updated ship nBK7UkxDB_1755382880203_0.22509147941371221 position to e3, facing: 1
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.22509147941371221 to e3
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 23: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.4575395482144764 from f10 to g9
+Ship yhXxJxQgv_1755382881221_0.4575395482144764 moved from f10 to g9, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship yhXxJxQgv_1755382881221_0.4575395482144764 position to g9, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.4575395482144764 to g9
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 24: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.7632355738316974 from h1 to g1
+Ship nBK7UkxDB_1755382880203_0.7632355738316974 moved from h1 to g1, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.7632355738316974 position to g1, facing: 3
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.7632355738316974 to g1
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 25: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.613916231284177 from d11 to c11
+Ship yhXxJxQgv_1755382881221_0.613916231284177 moved from d11 to c11, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship yhXxJxQgv_1755382881221_0.613916231284177 position to c11, facing: 3
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.613916231284177 to c11
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 26: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880204_0.7044602969465121 from c4 to d3
+Ship nBK7UkxDB_1755382880204_0.7044602969465121 moved from c4 to d3, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship nBK7UkxDB_1755382880204_0.7044602969465121 position to d3, facing: 5
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880204_0.7044602969465121 to d3
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 27: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.6302801176961481 from e11 to d11
+Ship yhXxJxQgv_1755382881221_0.6302801176961481 moved from e11 to d11, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: false)
+Updated ship yhXxJxQgv_1755382881221_0.6302801176961481 position to d11, facing: 3
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.6302801176961481 to d11
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 28: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.9195233792136124 from h2 to i1
+Ship nBK7UkxDB_1755382880203_0.9195233792136124 moved from h2 to i1, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship nBK7UkxDB_1755382880203_0.9195233792136124 position to i1, facing: 5
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.9195233792136124 to i1
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 29: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.11199547370913754 from f11 to f10
+Ship yhXxJxQgv_1755382881221_0.11199547370913754 moved from f11 to f10, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship yhXxJxQgv_1755382881221_0.11199547370913754 position to f10, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.11199547370913754 to f10
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 30: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880204_0.3881238785549226 from h3 to i3
+Ship nBK7UkxDB_1755382880204_0.3881238785549226 moved from h3 to i3, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship nBK7UkxDB_1755382880204_0.3881238785549226 position to i3, facing: 0
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880204_0.3881238785549226 to i3
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 31: Now yhXxJxQgv's turn (Player)
+Move request from yhXxJxQgv: ship yhXxJxQgv_1755382881221_0.4575395482144764 from g9 to g7
+Ship yhXxJxQgv_1755382881221_0.4575395482144764 moved from g9 to g7, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: false)
+Updated ship yhXxJxQgv_1755382881221_0.4575395482144764 position to g7, facing: 5
+Broadcasting shipMoved: ship yhXxJxQgv_1755382881221_0.4575395482144764 to g7
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 32: Now nBK7UkxDB's turn (Player)
+Move request from nBK7UkxDB: ship nBK7UkxDB_1755382880203_0.7632355738316974 from g1 to f2
+Ship nBK7UkxDB_1755382880203_0.7632355738316974 moved from g1 to f2, new facing: 2 (colDiff: -1, rowDiff: 1, evenRow: false)
+Updated ship nBK7UkxDB_1755382880203_0.7632355738316974 position to f2, facing: 2
+Broadcasting shipMoved: ship nBK7UkxDB_1755382880203_0.7632355738316974 to f2
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=false, name=Player
+Checking player yhXxJxQgv: isEliminated=false
+Turn 33: Now yhXxJxQgv's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=false, name=Player
+  yhXxJxQgv: isEliminated=true, name=Player
+Checking player nBK7UkxDB: isEliminated=false
+Turn 34: Now nBK7UkxDB's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+HexGameRoom zIgewCuj5 created!
+DnxcswhEF joined!
+G431_izlE joined!
+Game started in room zIgewCuj5 - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'G431_izlE', playerName: 'Player', roll: 5 },
+  { playerId: 'DnxcswhEF', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'G431_izlE', 'DnxcswhEF' ]
+nBK7UkxDB left!
+DnxcswhEF left!
+Player left during zone selection - disposing room
+G431_izlE left!
+Player left during zone selection - disposing room
+Room zIgewCuj5 disposing...
+yhXxJxQgv left!
+All human players left - disposing room
+Room MN8rAzJpA disposing...
+HexGameRoom 64UAqHdXx created!
+6USSvhnG3 joined!
+1NUPlhidh joined!
+Game started in room 64UAqHdXx - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: '1NUPlhidh', playerName: 'Player', roll: 3 },
+  { playerId: '6USSvhnG3', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ '1NUPlhidh', '6USSvhnG3' ]
+6USSvhnG3 left!
+Player left during zone selection - disposing room
+1NUPlhidh left!
+Player left during zone selection - disposing room
+Room 64UAqHdXx disposing...
+HexGameRoom JO0V6NJ9A created!
+pe5374mwF joined!
+i0o88ka9j joined!
+Game started in room JO0V6NJ9A - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'i0o88ka9j', playerName: 'Player', roll: 6 },
+  { playerId: 'pe5374mwF', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'i0o88ka9j', 'pe5374mwF' ]
+pe5374mwF left!
+Player left during zone selection - disposing room
+i0o88ka9j left!
+Player left during zone selection - disposing room
+Room JO0V6NJ9A disposing...
+HexGameRoom O2AT_aq5- created!
+MubEoinHx joined!
+nvt4GFpM3 joined!
+Game started in room O2AT_aq5- - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'nvt4GFpM3', playerName: 'Player', roll: 4 },
+  { playerId: 'MubEoinHx', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 4
+Zone selection order: [ 'nvt4GFpM3', 'MubEoinHx' ]
+MubEoinHx left!
+Player left during zone selection - disposing room
+nvt4GFpM3 left!
+Player left during zone selection - disposing room
+Room O2AT_aq5- disposing...
+Game ended - disposing room
+HexGameRoom LCxfzKprf created!
+rZo1vbxhU joined!
+OFJLQ2jZv joined!
+Game started in room LCxfzKprf - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'rZo1vbxhU', playerName: 'Player', roll: 6 },
+  { playerId: 'OFJLQ2jZv', playerName: 'Player', roll: 6 }
+]
+Tie detected! Re-rolling...
+Rolling dice for 2 players: [
+  { playerId: 'OFJLQ2jZv', playerName: 'Player', roll: 5 },
+  { playerId: 'rZo1vbxhU', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'OFJLQ2jZv', 'rZo1vbxhU' ]
+rZo1vbxhU left!
+Player left during zone selection - disposing room
+OFJLQ2jZv left!
+Player left during zone selection - disposing room
+Room LCxfzKprf disposing...
+HexGameRoom HDmhWsUsj created!
+ERqD6EIDn joined!
+_WTrmBArx joined!
+Game started in room HDmhWsUsj - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'ERqD6EIDn', playerName: 'Player', roll: 6 },
+  { playerId: '_WTrmBArx', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'ERqD6EIDn', '_WTrmBArx' ]
+Player Player (ERqD6EIDn) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'ERqD6EIDn', isReady: false },
+  { id: '_WTrmBArx', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'ERqD6EIDn', isReady: true },
+  { id: '_WTrmBArx', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to ERqD6EIDn (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  ERqD6EIDn: 10 ships
+  _WTrmBArx: 10 ships
+Broadcasting deploymentComplete - First turn: Player (ERqD6EIDn)
+Move request from ERqD6EIDn: ship ERqD6EIDn_1755383213550_0.5481824630394982 from i8 to h8
+Ship ERqD6EIDn_1755383213550_0.5481824630394982 moved from i8 to h8, new facing: 3 (colDiff: -1, rowDiff: 0, evenRow: true)
+Updated ship ERqD6EIDn_1755383213550_0.5481824630394982 position to h8, facing: 3
+Broadcasting shipMoved: ship ERqD6EIDn_1755383213550_0.5481824630394982 to h8
+moveToNextTurn - Player states:
+  ERqD6EIDn: isEliminated=false, name=Player
+  _WTrmBArx: isEliminated=false, name=Player
+Checking player _WTrmBArx: isEliminated=false
+Turn 2: Now _WTrmBArx's turn (Player)
+Movement pattern updated for corvette
+Movement pattern updated for corvette
+Movement pattern updated for corvette
+Movement pattern updated for corvette
+Movement pattern updated for corvette
+Movement pattern updated for corvette
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  nBK7UkxDB: isEliminated=true, name=Player
+  yhXxJxQgv: isEliminated=true, name=Player
+Checking player yhXxJxQgv: isEliminated=true
+Checking player nBK7UkxDB: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Move request from _WTrmBArx: ship _WTrmBArx_1755383214656_0.22360222207438185 from i1 to k1
+Ship _WTrmBArx_1755383214656_0.22360222207438185 moved from i1 to k1, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship _WTrmBArx_1755383214656_0.22360222207438185 position to k1, facing: 0
+Broadcasting shipMoved: ship _WTrmBArx_1755383214656_0.22360222207438185 to k1
+moveToNextTurn - Player states:
+  ERqD6EIDn: isEliminated=false, name=Player
+  _WTrmBArx: isEliminated=false, name=Player
+Checking player ERqD6EIDn: isEliminated=false
+Turn 3: Now ERqD6EIDn's turn (Player)
+Move request from ERqD6EIDn: ship ERqD6EIDn_1755383213551_0.6489997577828053 from g8 to i6
+Ship ERqD6EIDn_1755383213551_0.6489997577828053 moved from g8 to i6, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: true)
+Updated ship ERqD6EIDn_1755383213551_0.6489997577828053 position to i6, facing: 5
+Broadcasting shipMoved: ship ERqD6EIDn_1755383213551_0.6489997577828053 to i6
+moveToNextTurn - Player states:
+  ERqD6EIDn: isEliminated=false, name=Player
+  _WTrmBArx: isEliminated=false, name=Player
+Checking player _WTrmBArx: isEliminated=false
+Turn 4: Now _WTrmBArx's turn (Player)
+Move request from _WTrmBArx: ship _WTrmBArx_1755383214657_0.11385735510951278 from f3 to g3
+Ship _WTrmBArx_1755383214657_0.11385735510951278 moved from f3 to g3, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship _WTrmBArx_1755383214657_0.11385735510951278 position to g3, facing: 0
+Broadcasting shipMoved: ship _WTrmBArx_1755383214657_0.11385735510951278 to g3
+moveToNextTurn - Player states:
+  ERqD6EIDn: isEliminated=false, name=Player
+  _WTrmBArx: isEliminated=false, name=Player
+Checking player ERqD6EIDn: isEliminated=false
+Turn 5: Now ERqD6EIDn's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  ERqD6EIDn: isEliminated=true, name=Player
+  _WTrmBArx: isEliminated=false, name=Player
+Checking player _WTrmBArx: isEliminated=false
+Turn 6: Now _WTrmBArx's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+_WTrmBArx left!
+ERqD6EIDn left!
+All human players left - disposing room
+Room HDmhWsUsj disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  ERqD6EIDn: isEliminated=true, name=Player
+  _WTrmBArx: isEliminated=true, name=Player
+Checking player ERqD6EIDn: isEliminated=true
+Checking player _WTrmBArx: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Movement pattern updated for scout
+Movement pattern updated for interceptor
+Movement pattern updated for frigate
+Movement pattern updated for destroyer
+Movement pattern updated for cruiser
+HexGameRoom 7VyJjZ7X8 created!
+R4mr70QOW joined!
+6XQZWr1JD joined!
+Game started in room 7VyJjZ7X8 - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'R4mr70QOW', playerName: 'Player', roll: 3 },
+  { playerId: '6XQZWr1JD', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ 'R4mr70QOW', '6XQZWr1JD' ]
+Player Player (R4mr70QOW) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'R4mr70QOW', isReady: false },
+  { id: '6XQZWr1JD', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'R4mr70QOW', isReady: true },
+  { id: '6XQZWr1JD', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to R4mr70QOW (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  R4mr70QOW: 10 ships
+  6XQZWr1JD: 10 ships
+Broadcasting deploymentComplete - First turn: Player (R4mr70QOW)
+Move request from R4mr70QOW: ship R4mr70QOW_1755384907919_0.6821176974035819 from i8 to j7
+Ship R4mr70QOW_1755384907919_0.6821176974035819 moved from i8 to j7, new facing: 5 (colDiff: 1, rowDiff: -1, evenRow: true)
+Updated ship R4mr70QOW_1755384907919_0.6821176974035819 position to j7, facing: 5
+Broadcasting shipMoved: ship R4mr70QOW_1755384907919_0.6821176974035819 to j7
+moveToNextTurn - Player states:
+  R4mr70QOW: isEliminated=false, name=Player
+  6XQZWr1JD: isEliminated=false, name=Player
+Checking player 6XQZWr1JD: isEliminated=false
+Turn 2: Now 6XQZWr1JD's turn (Player)
+Move request from 6XQZWr1JD: ship 6XQZWr1JD_1755384908832_0.5340171390311974 from e3 to h3
+Ship 6XQZWr1JD_1755384908832_0.5340171390311974 moved from e3 to h3, new facing: 0 (colDiff: 3, rowDiff: 0, evenRow: false)
+Updated ship 6XQZWr1JD_1755384908832_0.5340171390311974 position to h3, facing: 0
+Broadcasting shipMoved: ship 6XQZWr1JD_1755384908832_0.5340171390311974 to h3
+moveToNextTurn - Player states:
+  R4mr70QOW: isEliminated=false, name=Player
+  6XQZWr1JD: isEliminated=false, name=Player
+Checking player R4mr70QOW: isEliminated=false
+Turn 3: Now R4mr70QOW's turn (Player)
+Move request from R4mr70QOW: ship R4mr70QOW_1755384907919_0.6821176974035819 from j7 to j4
+Ship R4mr70QOW_1755384907919_0.6821176974035819 moved from j7 to j4, new facing: 5 (colDiff: 0, rowDiff: -3, evenRow: false)
+Updated ship R4mr70QOW_1755384907919_0.6821176974035819 position to j4, facing: 5
+Broadcasting shipMoved: ship R4mr70QOW_1755384907919_0.6821176974035819 to j4
+moveToNextTurn - Player states:
+  R4mr70QOW: isEliminated=false, name=Player
+  6XQZWr1JD: isEliminated=false, name=Player
+Checking player 6XQZWr1JD: isEliminated=false
+Turn 4: Now 6XQZWr1JD's turn (Player)
+6XQZWr1JD left!
+R4mr70QOW left!
+All human players left - disposing room
+Room 7VyJjZ7X8 disposing...
+HexGameRoom eN35iDJrT created!
+gjeOkjkE2 joined!
+hrnSU1Vma joined!
+Game started in room eN35iDJrT - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'gjeOkjkE2', playerName: 'Player', roll: 6 },
+  { playerId: 'hrnSU1Vma', playerName: 'Player', roll: 3 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ 'gjeOkjkE2', 'hrnSU1Vma' ]
+Player Player (gjeOkjkE2) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'gjeOkjkE2', isReady: false },
+  { id: 'hrnSU1Vma', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'gjeOkjkE2', isReady: true },
+  { id: 'hrnSU1Vma', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to gjeOkjkE2 (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  gjeOkjkE2: 10 ships
+  hrnSU1Vma: 10 ships
+Broadcasting deploymentComplete - First turn: Player (gjeOkjkE2)
+Move request from gjeOkjkE2: ship gjeOkjkE2_1755384940997_0.4430130965565764 from g8 to j5
+Ship gjeOkjkE2_1755384940997_0.4430130965565764 moved from g8 to j5, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship gjeOkjkE2_1755384940997_0.4430130965565764 position to j5, facing: 5
+Broadcasting shipMoved: ship gjeOkjkE2_1755384940997_0.4430130965565764 to j5
+moveToNextTurn - Player states:
+  gjeOkjkE2: isEliminated=false, name=Player
+  hrnSU1Vma: isEliminated=false, name=Player
+Checking player hrnSU1Vma: isEliminated=false
+Turn 2: Now hrnSU1Vma's turn (Player)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  R4mr70QOW: isEliminated=false, name=Player
+  6XQZWr1JD: isEliminated=true, name=Player
+Checking player R4mr70QOW: isEliminated=false
+Turn 5: Now R4mr70QOW's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  gjeOkjkE2: isEliminated=false, name=Player
+  hrnSU1Vma: isEliminated=true, name=Player
+Checking player gjeOkjkE2: isEliminated=false
+Turn 3: Now gjeOkjkE2's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+Game ended - disposing room
+hrnSU1Vma left!
+gjeOkjkE2 left!
+All human players left - disposing room
+Room eN35iDJrT disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  R4mr70QOW: isEliminated=true, name=Player
+  6XQZWr1JD: isEliminated=true, name=Player
+Checking player 6XQZWr1JD: isEliminated=true
+Checking player R4mr70QOW: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  gjeOkjkE2: isEliminated=true, name=Player
+  hrnSU1Vma: isEliminated=true, name=Player
+Checking player hrnSU1Vma: isEliminated=true
+Checking player gjeOkjkE2: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom A3ixnA0bF created!
+gFw3BK2Jl joined!
+RoaZ_N0r9 joined!
+Game started in room A3ixnA0bF - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'gFw3BK2Jl', playerName: 'Player', roll: 6 },
+  { playerId: 'RoaZ_N0r9', playerName: 'Player', roll: 6 }
+]
+Tie detected! Re-rolling...
+Rolling dice for 2 players: [
+  { playerId: 'RoaZ_N0r9', playerName: 'Player', roll: 5 },
+  { playerId: 'gFw3BK2Jl', playerName: 'Player', roll: 4 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'RoaZ_N0r9', 'gFw3BK2Jl' ]
+Player Player (RoaZ_N0r9) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'gFw3BK2Jl', isReady: true },
+  { id: 'RoaZ_N0r9', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'gFw3BK2Jl', isReady: true },
+  { id: 'RoaZ_N0r9', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to RoaZ_N0r9 (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  RoaZ_N0r9: 10 ships
+  gFw3BK2Jl: 10 ships
+Broadcasting deploymentComplete - First turn: Player (RoaZ_N0r9)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.5179505413490486 from g8 to j5
+Ship RoaZ_N0r9_1755387200520_0.5179505413490486 moved from g8 to j5, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship RoaZ_N0r9_1755387200520_0.5179505413490486 position to j5, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.5179505413490486 to j5
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 2: Now gFw3BK2Jl's turn (Player)
+Move request from gFw3BK2Jl: ship gFw3BK2Jl_1755387201370_0.7983221553497648 from g3 to i3
+Ship gFw3BK2Jl_1755387201370_0.7983221553497648 moved from g3 to i3, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship gFw3BK2Jl_1755387201370_0.7983221553497648 position to i3, facing: 0
+Broadcasting shipMoved: ship gFw3BK2Jl_1755387201370_0.7983221553497648 to i3
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player RoaZ_N0r9: isEliminated=false
+Turn 3: Now RoaZ_N0r9's turn (Player)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.5179505413490486 from j5 to j3
+Ship RoaZ_N0r9_1755387200520_0.5179505413490486 moved from j5 to j3, new facing: 5 (colDiff: 0, rowDiff: -2, evenRow: false)
+Updated ship RoaZ_N0r9_1755387200520_0.5179505413490486 position to j3, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.5179505413490486 to j3
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 4: Now gFw3BK2Jl's turn (Player)
+Move request from gFw3BK2Jl: ship gFw3BK2Jl_1755387201370_0.7983221553497648 from i3 to j3
+Combat! Ship gFw3BK2Jl_1755387201370_0.7983221553497648 destroyed RoaZ_N0r9_1755387200520_0.5179505413490486 at j3
+Ship gFw3BK2Jl_1755387201370_0.7983221553497648 moved from i3 to j3, new facing: 0 (colDiff: 1, rowDiff: 0, evenRow: false)
+Updated ship gFw3BK2Jl_1755387201370_0.7983221553497648 position to j3, facing: 0
+Broadcasting shipMoved: ship gFw3BK2Jl_1755387201370_0.7983221553497648 to j3
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player RoaZ_N0r9: isEliminated=false
+Turn 5: Now RoaZ_N0r9's turn (Player)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.7167475930443552 from e10 to h7
+Ship RoaZ_N0r9_1755387200520_0.7167475930443552 moved from e10 to h7, new facing: 5 (colDiff: 3, rowDiff: -3, evenRow: true)
+Updated ship RoaZ_N0r9_1755387200520_0.7167475930443552 position to h7, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.7167475930443552 to h7
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 6: Now gFw3BK2Jl's turn (Player)
+Move request from gFw3BK2Jl: ship gFw3BK2Jl_1755387201370_0.7983221553497648 from j3 to j5
+Ship gFw3BK2Jl_1755387201370_0.7983221553497648 moved from j3 to j5, new facing: 1 (colDiff: 0, rowDiff: 2, evenRow: false)
+Updated ship gFw3BK2Jl_1755387201370_0.7983221553497648 position to j5, facing: 1
+Broadcasting shipMoved: ship gFw3BK2Jl_1755387201370_0.7983221553497648 to j5
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player RoaZ_N0r9: isEliminated=false
+Turn 7: Now RoaZ_N0r9's turn (Player)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.7167475930443552 from h7 to j5
+Combat! Ship RoaZ_N0r9_1755387200520_0.7167475930443552 destroyed gFw3BK2Jl_1755387201370_0.7983221553497648 at j5
+Ship RoaZ_N0r9_1755387200520_0.7167475930443552 moved from h7 to j5, new facing: 5 (colDiff: 2, rowDiff: -2, evenRow: false)
+Updated ship RoaZ_N0r9_1755387200520_0.7167475930443552 position to j5, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.7167475930443552 to j5
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 8: Now gFw3BK2Jl's turn (Player)
+Move request from gFw3BK2Jl: ship gFw3BK2Jl_1755387201370_0.6973317542471549 from f3 to h3
+Ship gFw3BK2Jl_1755387201370_0.6973317542471549 moved from f3 to h3, new facing: 0 (colDiff: 2, rowDiff: 0, evenRow: false)
+Updated ship gFw3BK2Jl_1755387201370_0.6973317542471549 position to h3, facing: 0
+Broadcasting shipMoved: ship gFw3BK2Jl_1755387201370_0.6973317542471549 to h3
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player RoaZ_N0r9: isEliminated=false
+Turn 9: Now RoaZ_N0r9's turn (Player)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.48166336062808024 from h8 to h5
+Ship RoaZ_N0r9_1755387200520_0.48166336062808024 moved from h8 to h5, new facing: 5 (colDiff: 0, rowDiff: -3, evenRow: true)
+Updated ship RoaZ_N0r9_1755387200520_0.48166336062808024 position to h5, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.48166336062808024 to h5
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 10: Now gFw3BK2Jl's turn (Player)
+Move request from gFw3BK2Jl: ship gFw3BK2Jl_1755387201370_0.6973317542471549 from h3 to h4
+Ship gFw3BK2Jl_1755387201370_0.6973317542471549 moved from h3 to h4, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: false)
+Updated ship gFw3BK2Jl_1755387201370_0.6973317542471549 position to h4, facing: 1
+Broadcasting shipMoved: ship gFw3BK2Jl_1755387201370_0.6973317542471549 to h4
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player RoaZ_N0r9: isEliminated=false
+Turn 11: Now RoaZ_N0r9's turn (Player)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.48166336062808024 from h5 to h4
+Combat! Ship RoaZ_N0r9_1755387200520_0.48166336062808024 destroyed gFw3BK2Jl_1755387201370_0.6973317542471549 at h4
+Ship RoaZ_N0r9_1755387200520_0.48166336062808024 moved from h5 to h4, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: false)
+Updated ship RoaZ_N0r9_1755387200520_0.48166336062808024 position to h4, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.48166336062808024 to h4
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 12: Now gFw3BK2Jl's turn (Player)
+Move request from gFw3BK2Jl: ship gFw3BK2Jl_1755387201370_0.2566505509820938 from h2 to h3
+Ship gFw3BK2Jl_1755387201370_0.2566505509820938 moved from h2 to h3, new facing: 1 (colDiff: 0, rowDiff: 1, evenRow: true)
+Updated ship gFw3BK2Jl_1755387201370_0.2566505509820938 position to h3, facing: 1
+Broadcasting shipMoved: ship gFw3BK2Jl_1755387201370_0.2566505509820938 to h3
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player RoaZ_N0r9: isEliminated=false
+Turn 13: Now RoaZ_N0r9's turn (Player)
+Move request from RoaZ_N0r9: ship RoaZ_N0r9_1755387200520_0.48166336062808024 from h4 to h3
+Combat! Ship RoaZ_N0r9_1755387200520_0.48166336062808024 destroyed gFw3BK2Jl_1755387201370_0.2566505509820938 at h3
+Ship RoaZ_N0r9_1755387200520_0.48166336062808024 moved from h4 to h3, new facing: 5 (colDiff: 0, rowDiff: -1, evenRow: true)
+Updated ship RoaZ_N0r9_1755387200520_0.48166336062808024 position to h3, facing: 5
+Broadcasting shipMoved: ship RoaZ_N0r9_1755387200520_0.48166336062808024 to h3
+moveToNextTurn - Player states:
+  gFw3BK2Jl: isEliminated=false, name=Player
+  RoaZ_N0r9: isEliminated=false, name=Player
+Checking player gFw3BK2Jl: isEliminated=false
+Turn 14: Now gFw3BK2Jl's turn (Player)
+Player Player (gFw3BK2Jl) resigned
+Marking player Player (gFw3BK2Jl) as eliminated: isEliminated=true
+Active players remaining: 1
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+RoaZ_N0r9 left!
+gFw3BK2Jl left!
+All human players left - disposing room
+Room A3ixnA0bF disposing...
+Turn timer expired for Player - eliminating player
+HexGameRoom gJlTdX9qg created!
+zXDzsxseW joined!
+5JPD9hXGJ joined!
+Game started in room gJlTdX9qg - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'zXDzsxseW', playerName: 'Player', roll: 2 },
+  { playerId: '5JPD9hXGJ', playerName: 'Player', roll: 2 }
+]
+Tie detected! Re-rolling...
+Rolling dice for 2 players: [
+  { playerId: 'zXDzsxseW', playerName: 'Player', roll: 5 },
+  { playerId: '5JPD9hXGJ', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 5
+Zone selection order: [ 'zXDzsxseW', '5JPD9hXGJ' ]
+Player Player (zXDzsxseW) selected zone 4
+Available zones remaining: 1,2,3
+zXDzsxseW left!
+5JPD9hXGJ left!
+All human players left - disposing room
+Room gJlTdX9qg disposing...
+HexGameRoom UaknvMXcZ created!
+e4xkPejS3 joined!
+hgjls53UQ joined!
+Game started in room UaknvMXcZ - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'e4xkPejS3', playerName: 'Host', roll: 1 },
+  { playerId: 'hgjls53UQ', playerName: 'Player', roll: 1 }
+]
+Tie detected! Re-rolling...
+Rolling dice for 2 players: [
+  { playerId: 'e4xkPejS3', playerName: 'Host', roll: 3 },
+  { playerId: 'hgjls53UQ', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Host goes first with roll of 3
+Zone selection order: [ 'e4xkPejS3', 'hgjls53UQ' ]
+Player Host (e4xkPejS3) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'e4xkPejS3', isReady: false },
+  { id: 'hgjls53UQ', isReady: true }
+]
+Not all players ready yet
+Host confirmed deployment
+Checking if all players deployed: [
+  { id: 'e4xkPejS3', isReady: true },
+  { id: 'hgjls53UQ', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to e4xkPejS3 (dice roll winner)
+Broadcasting deploymentComplete with 22 ships
+Ship breakdown by owner:
+  e4xkPejS3: 11 ships
+  hgjls53UQ: 11 ships
+Broadcasting deploymentComplete - First turn: Host (e4xkPejS3)
+Deployment timer expired for Player
+Deployment timer expired for Player - auto-deploying
+Checking if all players deployed: [
+  { id: 'zXDzsxseW', isReady: true },
+  { id: '5JPD9hXGJ', isReady: false }
+]
+Not all players ready yet
+Deployment timer expired for Player
+Deployment timer expired for Player - auto-deploying
+Checking if all players deployed: [
+  { id: 'zXDzsxseW', isReady: true },
+  { id: '5JPD9hXGJ', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to zXDzsxseW (dice roll winner)
+Broadcasting deploymentComplete with 20 ships
+Ship breakdown by owner:
+  zXDzsxseW: 10 ships
+  5JPD9hXGJ: 10 ships
+Broadcasting deploymentComplete - First turn: Player (zXDzsxseW)
+e4xkPejS3 left!
+hgjls53UQ left!
+All human players left - disposing room
+Room UaknvMXcZ disposing...
+HexGameRoom NGJcmZQ5z created!
+RjbjQ07IJ joined!
+NNIAClzzl joined!
+Game started in room NGJcmZQ5z - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'RjbjQ07IJ', playerName: 'Player', roll: 2 },
+  { playerId: 'NNIAClzzl', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 2
+Zone selection order: [ 'RjbjQ07IJ', 'NNIAClzzl' ]
+Player Player (RjbjQ07IJ) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'RjbjQ07IJ', isReady: false },
+  { id: 'NNIAClzzl', isReady: true }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'RjbjQ07IJ', isReady: true },
+  { id: 'NNIAClzzl', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to RjbjQ07IJ (dice roll winner)
+Broadcasting deploymentComplete with 22 ships
+Ship breakdown by owner:
+  RjbjQ07IJ: 11 ships
+  NNIAClzzl: 11 ships
+Broadcasting deploymentComplete - First turn: Player (RjbjQ07IJ)
+Turn timer expired for Host - eliminating player
+Player Host eliminated due to timer expiration
+moveToNextTurn - Player states:
+  e4xkPejS3: isEliminated=true, name=Host
+  hgjls53UQ: isEliminated=false, name=Player
+Checking player hgjls53UQ: isEliminated=false
+Turn 2: Now hgjls53UQ's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  zXDzsxseW: isEliminated=true, name=Player
+  5JPD9hXGJ: isEliminated=false, name=Player
+Checking player 5JPD9hXGJ: isEliminated=false
+Turn 2: Now 5JPD9hXGJ's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+Game ended - disposing room
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  RjbjQ07IJ: isEliminated=true, name=Player
+  NNIAClzzl: isEliminated=false, name=Player
+Checking player NNIAClzzl: isEliminated=false
+Turn 2: Now NNIAClzzl's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+NNIAClzzl left!
+RjbjQ07IJ left!
+All human players left - disposing room
+Room NGJcmZQ5z disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  e4xkPejS3: isEliminated=true, name=Host
+  hgjls53UQ: isEliminated=true, name=Player
+Checking player e4xkPejS3: isEliminated=true
+Checking player hgjls53UQ: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  zXDzsxseW: isEliminated=true, name=Player
+  5JPD9hXGJ: isEliminated=true, name=Player
+Checking player zXDzsxseW: isEliminated=true
+Checking player 5JPD9hXGJ: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  RjbjQ07IJ: isEliminated=true, name=Player
+  NNIAClzzl: isEliminated=true, name=Player
+Checking player RjbjQ07IJ: isEliminated=true
+Checking player NNIAClzzl: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+HexGameRoom cT9yeiZym created!
+rrQ5sUJd8 joined!
+SDjvE8Us5 joined!
+Game started in room cT9yeiZym - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: 'rrQ5sUJd8', playerName: 'Player', roll: 3 },
+  { playerId: 'SDjvE8Us5', playerName: 'Player', roll: 1 }
+]
+Dice rolls complete. Player goes first with roll of 3
+Zone selection order: [ 'rrQ5sUJd8', 'SDjvE8Us5' ]
+Player Player (rrQ5sUJd8) selected zone 4
+Available zones remaining: 1,2,3
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'rrQ5sUJd8', isReady: true },
+  { id: 'SDjvE8Us5', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'rrQ5sUJd8', isReady: true },
+  { id: 'SDjvE8Us5', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to rrQ5sUJd8 (dice roll winner)
+Broadcasting deploymentComplete with 21 ships
+Ship breakdown by owner:
+  rrQ5sUJd8: 10 ships
+  SDjvE8Us5: 11 ships
+Broadcasting deploymentComplete - First turn: Player (rrQ5sUJd8)
+rrQ5sUJd8 left!
+SDjvE8Us5 left!
+All human players left - disposing room
+Room cT9yeiZym disposing...
+HexGameRoom 1MVWNSQwV created!
+rFdNjU94t joined!
+91qWOXQx6 joined!
+Game started in room 1MVWNSQwV - room locked, auto-dispose disabled
+Rolling dice for 2 players: [
+  { playerId: '91qWOXQx6', playerName: 'Player', roll: 6 },
+  { playerId: 'rFdNjU94t', playerName: 'Player', roll: 2 }
+]
+Dice rolls complete. Player goes first with roll of 6
+Zone selection order: [ '91qWOXQx6', 'rFdNjU94t' ]
+Player Player (91qWOXQx6) selected zone 2
+Available zones remaining: 1,3,4
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'rFdNjU94t', isReady: true },
+  { id: '91qWOXQx6', isReady: false }
+]
+Not all players ready yet
+Player confirmed deployment
+Checking if all players deployed: [
+  { id: 'rFdNjU94t', isReady: true },
+  { id: '91qWOXQx6', isReady: true }
+]
+All players ready! Starting game phase...
+Setting first turn to 91qWOXQx6 (dice roll winner)
+Broadcasting deploymentComplete with 22 ships
+Ship breakdown by owner:
+  91qWOXQx6: 11 ships
+  rFdNjU94t: 11 ships
+Broadcasting deploymentComplete - First turn: Player (91qWOXQx6)
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  rrQ5sUJd8: isEliminated=true, name=Player
+  SDjvE8Us5: isEliminated=false, name=Player
+Checking player SDjvE8Us5: isEliminated=false
+Turn 2: Now SDjvE8Us5's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Game ended - disposing room
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  rFdNjU94t: isEliminated=false, name=Player
+  91qWOXQx6: isEliminated=true, name=Player
+Checking player rFdNjU94t: isEliminated=false
+Turn 2: Now rFdNjU94t's turn (Player)
+Active players remaining: 1
+Game ended - Player wins as last survivor
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  rrQ5sUJd8: isEliminated=true, name=Player
+  SDjvE8Us5: isEliminated=true, name=Player
+Checking player rrQ5sUJd8: isEliminated=true
+Checking player SDjvE8Us5: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+Game ended - disposing room
+91qWOXQx6 left!
+rFdNjU94t left!
+All human players left - disposing room
+Room 1MVWNSQwV disposing...
+Turn timer expired for Player - eliminating player
+Player Player eliminated due to timer expiration
+moveToNextTurn - Player states:
+  rFdNjU94t: isEliminated=true, name=Player
+  91qWOXQx6: isEliminated=true, name=Player
+Checking player 91qWOXQx6: isEliminated=true
+Checking player rFdNjU94t: isEliminated=true
+No active players found for next turn!
+Active players remaining: 0
+11:45:52 PM [tsx] change in ./src/rooms/HexGameRoom.ts Restarting...
+c[dotenv@17.2.1] injecting env (1) from ../../../../../../../../../etc/environment -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.2.1] injecting env (1) from .env.development -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+✅ .env.development loaded.
+✅ Express initialized
+
+       ___      _
+      / __\___ | |_   _ ___  ___ _   _ ___
+     / /  / _ \| | | | / __|/ _ \ | | / __|
+    / /__| (_) | | |_| \__ \  __/ |_| \__ \
+    \____/\___/|_|\__, |___/\___|\__,_|___/
+                  |___/
+
+     · Multiplayer Framework for Node.js ·
+
+💖 Consider becoming a Sponsor on GitHub → https://github.com/sponsors/endel
+🌟 Give us a star on GitHub → https://github.com/colyseus/colyseus
+☁️  Deploy and scale your project on Colyseus Cloud → https://cloud.colyseus.io
+
+
+⚔️  Listening on http://localhost:2567
