@@ -52,23 +52,24 @@ var terrain_obstacles: Array[HexMath.HexCoord] = []  # Meteors, etc.
 var debris_fields: Array[HexMath.HexCoord] = []
 
 # === DEPLOYMENT ZONES ===
-const DEPLOYMENT_ZONES = {
-	GameConstants.DeploymentZone.ZONE_1_TOP_RIGHT: {
+# Note: Using var instead of const because enum keys aren't compile-time constants
+var DEPLOYMENT_ZONES = {
+	1: {  # ZONE_1_TOP_RIGHT
 		"cols": [8, 9, 10, 11],  # i-l
 		"rows": [1, 2, 3, 4],   # 1-4
 		"default_direction": 3  # Face West (180°)
 	},
-	GameConstants.DeploymentZone.ZONE_2_BOTTOM_RIGHT: {
+	2: {  # ZONE_2_BOTTOM_RIGHT
 		"cols": [8, 9, 10, 11],  # i-l
 		"rows": [8, 9, 10, 11],  # 8-11
 		"default_direction": 3  # Face West (180°)
 	},
-	GameConstants.DeploymentZone.ZONE_3_BOTTOM_LEFT: {
+	3: {  # ZONE_3_BOTTOM_LEFT
 		"cols": [0, 1, 2, 3],   # a-d
 		"rows": [8, 9, 10, 11],  # 8-11
 		"default_direction": 0  # Face East (0°)
 	},
-	GameConstants.DeploymentZone.ZONE_4_TOP_LEFT: {
+	4: {  # ZONE_4_TOP_LEFT
 		"cols": [0, 1, 2, 3],   # a-d
 		"rows": [1, 2, 3, 4],   # 1-4
 		"default_direction": 0  # Face East (0°)
