@@ -54,23 +54,23 @@ var debris_fields: Array[HexMath.HexCoord] = []
 # === DEPLOYMENT ZONES ===
 const DEPLOYMENT_ZONES = {
 	GameConstants.DeploymentZone.ZONE_1_TOP_RIGHT: {
-		"cols": range(8, 12),  # i-l
-		"rows": range(1, 5),   # 1-4
+		"cols": [8, 9, 10, 11],  # i-l
+		"rows": [1, 2, 3, 4],   # 1-4
 		"default_direction": 3  # Face West (180°)
 	},
 	GameConstants.DeploymentZone.ZONE_2_BOTTOM_RIGHT: {
-		"cols": range(8, 12),  # i-l
-		"rows": range(8, 12),  # 8-11
+		"cols": [8, 9, 10, 11],  # i-l
+		"rows": [8, 9, 10, 11],  # 8-11
 		"default_direction": 3  # Face West (180°)
 	},
 	GameConstants.DeploymentZone.ZONE_3_BOTTOM_LEFT: {
-		"cols": range(0, 4),   # a-d
-		"rows": range(8, 12),  # 8-11
+		"cols": [0, 1, 2, 3],   # a-d
+		"rows": [8, 9, 10, 11],  # 8-11
 		"default_direction": 0  # Face East (0°)
 	},
 	GameConstants.DeploymentZone.ZONE_4_TOP_LEFT: {
-		"cols": range(0, 4),   # a-d
-		"rows": range(1, 5),   # 1-4
+		"cols": [0, 1, 2, 3],   # a-d
+		"rows": [1, 2, 3, 4],   # 1-4
 		"default_direction": 0  # Face East (0°)
 	}
 }
