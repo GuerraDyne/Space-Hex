@@ -14,6 +14,7 @@ import './styles.css';
 
 // Ship image cache
 const shipImages = new Map<string, HTMLImageElement>();
+const failedImages = new Set<string>();
 
 // Get ship image path
 function getShipImagePath(type: ShipType, color: string): string {
@@ -24,7 +25,11 @@ function getShipImagePath(type: ShipType, color: string): string {
     return `/assets/ships/${colorName}_Command_Ship.png`;
   }
 
-  // Handle frigate (Captain for some colors, but we'll use Frigate naming convention)
+  // No frigate assets exist, skip
+  if (type === 'frigate') {
+    return '';
+  }
+
   const typeName = type.charAt(0).toUpperCase() + type.slice(1);
   return `/assets/ships/${colorName} ${typeName}.png`;
 }
@@ -33,17 +38,23 @@ function getShipImagePath(type: ShipType, color: string): string {
 function preloadShipImages() {
   const colors = ['blue', 'red', 'green', 'yellow'];
   const types: ShipType[] = [
-    'scout', 'interceptor', 'corvette', 'frigate', 'destroyer',
+    'scout', 'interceptor', 'corvette', 'destroyer',
     'cruiser', 'battleship', 'artillery', 'mothership'
   ];
 
   colors.forEach((color) => {
     types.forEach((type) => {
       const key = `${color}_${type}`;
-      if (!shipImages.has(key)) {
+      if (!shipImages.has(key) && !failedImages.has(key)) {
         const img = new Image();
-        img.src = getShipImagePath(type, color);
-        shipImages.set(key, img);
+        const path = getShipImagePath(type, color);
+        if (path) {
+          img.onerror = () => {
+            failedImages.add(key);
+          };
+          img.src = path;
+          shipImages.set(key, img);
+        }
       }
     });
   });
@@ -205,7 +216,7 @@ export const App: React.FC = () => {
       ctx.rotate(rotation);
 
       // Draw ship image or fallback to shape
-      if (shipImage && shipImage.complete && imagesLoaded) {
+      if (shipImage && shipImage.complete && shipImage.naturalWidth > 0 && imagesLoaded && !failedImages.has(imageKey)) {
         const imgSize = HEX_SIZE * 1.4;
         ctx.drawImage(shipImage, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
       } else {
