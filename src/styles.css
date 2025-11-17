@@ -1,4 +1,4 @@
-/* Hexarch Game Styles - Clean and Simple */
+/* Hexarch Game Styles */
 
 * {
   margin: 0;
@@ -37,6 +37,16 @@ body {
   margin-bottom: 40px;
 }
 
+.menu-buttons {
+  margin-bottom: 30px;
+}
+
+.menu-info {
+  color: #666;
+  text-align: center;
+  line-height: 1.8;
+}
+
 .menu button {
   padding: 15px 40px;
   font-size: 18px;
@@ -54,6 +64,69 @@ body {
   transform: translateY(-2px);
 }
 
+/* Phase Screens */
+.phase-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+}
+
+.phase-screen h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #4488ff;
+}
+
+.phase-screen p {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* Dice Roll */
+.dice-area {
+  display: flex;
+  gap: 60px;
+}
+
+.player-dice {
+  text-align: center;
+}
+
+.player-dice h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dice-result {
+  font-size: 80px;
+  font-weight: bold;
+  background: #2a2a4a;
+  padding: 20px 40px;
+  border-radius: 12px;
+  border: 3px solid #4a4a6a;
+}
+
+.dice-waiting {
+  font-size: 24px;
+  color: #888;
+  padding: 40px;
+}
+
+.roll-button {
+  font-size: 32px !important;
+  padding: 30px 60px !important;
+  background: #2a4a2a !important;
+  border: 3px solid #4a8a4a !important;
+}
+
+.roll-button:hover {
+  background: #3a6a3a !important;
+}
+
 /* Game Screen */
 .game {
   width: 100vw;
@@ -64,6 +137,155 @@ body {
 canvas {
   display: block;
   background: #0a0a1a;
+}
+
+/* Phase Overlay */
+.phase-overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 40, 0.95);
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 400px;
+}
+
+.phase-overlay h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #4488ff;
+}
+
+.phase-overlay p {
+  margin-bottom: 15px;
+}
+
+.zone-list {
+  margin-top: 20px;
+}
+
+.zone-item {
+  padding: 10px;
+  margin: 8px 0;
+  background: #2a2a4a;
+  border-left: 4px solid;
+  text-align: left;
+}
+
+/* Deployment Panel */
+.deployment-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(20, 20, 40, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+}
+
+.deployment-panel h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #4488ff;
+}
+
+.deployment-panel p {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.current-ship {
+  background: #2a2a4a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.current-ship h3 {
+  color: #ffaa00;
+  margin-bottom: 10px;
+}
+
+.rotation-controls {
+  margin-top: 15px;
+}
+
+.rotation-controls p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.rotate-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.rotate-buttons button {
+  padding: 8px;
+  background: #3a3a5a;
+  border: 1px solid #5a5a7a;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rotate-buttons button:hover {
+  background: #4a4a6a;
+}
+
+.rotate-buttons button.active {
+  background: #4a6a4a;
+  border-color: #6a9a6a;
+}
+
+.ship-queue {
+  margin-top: 15px;
+}
+
+.ship-queue h4 {
+  color: #aaa;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.queue-ship {
+  padding: 8px 12px;
+  background: #2a2a4a;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.queue-ship:hover {
+  background: #3a3a5a;
+}
+
+.queue-ship.selected {
+  border-color: #ffff00;
+}
+
+.confirm-button {
+  width: 100%;
+  padding: 12px;
+  background: #2a4a2a !important;
+  border: 2px solid #4a8a4a !important;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.confirm-button:hover {
+  background: #3a6a3a !important;
 }
 
 /* Top Bar */
@@ -90,6 +312,8 @@ canvas {
   padding: 15px;
   border-radius: 8px;
   min-width: 180px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 
 .left-panel h3 {
@@ -163,6 +387,30 @@ canvas {
   cursor: not-allowed;
 }
 
+.rotate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.rotate-grid button {
+  padding: 8px !important;
+  font-size: 12px !important;
+}
+
+.rotate-grid button.current {
+  background: #4a4a6a !important;
+  border-color: #6a6a8a !important;
+}
+
+.facing-info {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .end-turn-btn {
   background: #2a4a2a !important;
   border-color: #4a8a4a !important;
@@ -173,16 +421,13 @@ canvas {
   background: #3a6a3a !important;
 }
 
-.rotate-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  margin-bottom: 15px;
+.quit-btn {
+  background: #4a2a2a !important;
+  border-color: #8a4a4a !important;
 }
 
-.rotate-btn {
-  padding: 8px !important;
-  font-size: 12px !important;
+.quit-btn:hover {
+  background: #6a3a3a !important;
 }
 
 /* Planned Indicator */
@@ -195,4 +440,86 @@ canvas {
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: bold;
+}
+
+/* End Screen */
+.end-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+}
+
+.end-screen h1 {
+  font-size: 56px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 30px currentColor;
+}
+
+.game-stats {
+  background: rgba(30, 30, 50, 0.9);
+  padding: 30px 50px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  min-width: 500px;
+}
+
+.game-stats h3 {
+  font-size: 24px;
+  color: #4488ff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.game-stats > p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.player-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.stat-block {
+  flex: 1;
+  background: #2a2a4a;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.stat-block h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.stat-block p {
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.end-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.end-buttons button {
+  padding: 15px 40px;
+  font-size: 18px;
+  border: 2px solid #4488ff;
+  background: #1a1a3a;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.end-buttons button:hover {
+  background: #2a2a5a;
+  transform: translateY(-2px);
 }

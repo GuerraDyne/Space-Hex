@@ -1,4 +1,4 @@
-// Core game types - orientation-based movement system
+// Core game types - Complete hex-based turn-based strategy game
 
 export interface HexCoord {
   q: number;
@@ -24,7 +24,8 @@ export interface Ship {
   type: ShipType;
   ownerId: string;
   position: HexCoord;
-  facing: HexDirection; // Which direction ship is pointing
+  facing: HexDirection;
+  deployed: boolean; // Whether ship has been placed on board
   destroyed: boolean;
 }
 
@@ -33,19 +34,40 @@ export interface Player {
   name: string;
   color: 'blue' | 'red' | 'green' | 'yellow';
   isAI: boolean;
+  diceRoll: number | null; // Result of zone selection dice roll
+  selectedZone: number | null; // Which deployment zone they chose (0-3)
 }
 
 export interface Debris {
+  id: string;
   position: HexCoord;
 }
 
+export interface DeploymentZone {
+  id: number;
+  name: string;
+  hexes: HexCoord[];
+  color: string;
+  ownerId: string | null; // Player who claimed this zone
+}
+
+// Game phases - strict state machine
+export type Phase =
+  | 'menu'
+  | 'setup' // Configure game settings
+  | 'diceRoll' // Roll to determine zone selection order
+  | 'zoneSelection' // Players pick deployment zones
+  | 'deployment' // Place ships in chosen zone
+  | 'battle' // Main gameplay
+  | 'ended'; // Game over, show results
+
 // Movement pattern for each ship type - based on ship's facing
 export interface MovementPattern {
-  maxForward: number;      // Max hexes straight ahead
-  maxForwardSide: number;  // Max hexes forward-diagonal
-  maxSide: number;         // Max hexes directly sideways
-  maxBackward: number;     // Max hexes straight back
-  rotationCostPerStep: number; // AP cost per 60° rotation
+  maxForward: number;
+  maxForwardSide: number;
+  maxSide: number;
+  maxBackward: number;
+  rotationCostPerStep: number;
 }
 
 export const SHIP_MOVEMENT: Record<ShipType, MovementPattern> = {
@@ -57,10 +79,9 @@ export const SHIP_MOVEMENT: Record<ShipType, MovementPattern> = {
   cruiser: { maxForward: 2, maxForwardSide: 1, maxSide: 0, maxBackward: 0, rotationCostPerStep: 1 },
   battleship: { maxForward: 2, maxForwardSide: 1, maxSide: 0, maxBackward: 0, rotationCostPerStep: 1 },
   artillery: { maxForward: 1, maxForwardSide: 1, maxSide: 0, maxBackward: 0, rotationCostPerStep: 1 },
-  mothership: { maxForward: 1, maxForwardSide: 1, maxSide: 1, maxBackward: 1, rotationCostPerStep: 0 }, // Omnidirectional
+  mothership: { maxForward: 1, maxForwardSide: 1, maxSide: 1, maxBackward: 1, rotationCostPerStep: 0 },
 };
 
-// AP per ship type per turn
 export const SHIP_AP: Record<ShipType, number> = {
   scout: 7,
   interceptor: 6,
@@ -85,15 +106,46 @@ export const SHIP_NAMES: Record<ShipType, string> = {
   mothership: 'Mothership',
 };
 
-export type Phase = 'menu' | 'playing' | 'ended';
+export const PLAYER_MAX_AP = 10;
+
+export const PLAYER_COLORS: Record<string, string> = {
+  blue: '#4488ff',
+  red: '#ff4444',
+  green: '#44ff44',
+  yellow: '#ffff44',
+};
 
 export interface Animation {
   id: string;
-  type: 'thruster' | 'explosion' | 'laser';
+  type: 'explosion' | 'thruster' | 'laser' | 'move';
   position: HexCoord;
-  direction?: HexDirection;
   startTime: number;
   duration: number;
+  direction?: HexDirection;
+  fromPos?: HexCoord;
+  toPos?: HexCoord;
+}
+
+export interface PlannedAction {
+  shipId: string;
+  type: 'move' | 'rotate';
+  newPosition?: HexCoord;
+  newFacing?: HexDirection;
+  apCost: number;
+}
+
+export interface GameStats {
+  turnCount: number;
+  shipsDestroyed: Record<string, number>; // playerId -> count
+  totalMovements: Record<string, number>; // playerId -> count
+  gameDuration: number; // milliseconds
+}
+
+export interface ReplayAction {
+  turn: number;
+  playerId: string;
+  actions: PlannedAction[];
+  timestamp: number;
 }
 
 export interface GameState {
@@ -101,17 +153,32 @@ export interface GameState {
   players: Player[];
   ships: Ship[];
   debris: Debris[];
+  deploymentZones: DeploymentZone[];
+  boardHexes: HexCoord[];
+  boardRadius: number;
   currentPlayerId: string;
   turnNumber: number;
-  winnerId: string | null;
   playerAPRemaining: number;
-  shipAPUsed: Map<string, number>; // Track AP used per ship this turn
-}
+  winnerId: string | null;
 
-export const PLAYER_MAX_AP = 10;
-export const PLAYER_COLORS: Record<string, string> = {
-  blue: '#4488ff',
-  red: '#ff4444',
-  green: '#44ff44',
-  yellow: '#ffaa44',
-};
+  // Phase-specific state
+  zoneSelectionOrder: string[]; // Player IDs in order of zone selection
+  currentZoneSelector: number; // Index into zoneSelectionOrder
+
+  // Deployment state
+  deployingPlayerId: string | null;
+  shipToDeployId: string | null; // Current ship being placed
+
+  // Battle state
+  plannedActions: PlannedAction[];
+
+  // Game history
+  gameHistory: ReplayAction[];
+  stats: GameStats;
+
+  // Animations
+  animations: Animation[];
+
+  // Game timing
+  startTime: number;
+}

@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useGameStore } from './game/gameStore';
 import {
-  HexCoord,
   HexDirection,
   SHIP_NAMES,
   SHIP_AP,
@@ -9,39 +8,24 @@ import {
   PLAYER_COLORS,
   ShipType,
 } from './types/game';
-import { hexToPixel, directionToAngle, hexEqual } from './engine/hexGrid';
+import { hexToPixel, directionToAngle, hexEqual, pixelToHex } from './engine/hexGrid';
 import './styles.css';
 
 // Ship image cache
 const shipImages = new Map<string, HTMLImageElement>();
 const failedImages = new Set<string>();
 
-// Get ship image path
 function getShipImagePath(type: ShipType, color: string): string {
   const colorName = color.charAt(0).toUpperCase() + color.slice(1);
-
-  // Handle special naming for mothership (Command_Ship)
-  if (type === 'mothership') {
-    return `/assets/ships/${colorName}_Command_Ship.png`;
-  }
-
-  // No frigate assets exist, skip
-  if (type === 'frigate') {
-    return '';
-  }
-
+  if (type === 'mothership') return `/assets/ships/${colorName}_Command_Ship.png`;
+  if (type === 'frigate') return '';
   const typeName = type.charAt(0).toUpperCase() + type.slice(1);
   return `/assets/ships/${colorName} ${typeName}.png`;
 }
 
-// Preload ship images
 function preloadShipImages() {
   const colors = ['blue', 'red', 'green', 'yellow'];
-  const types: ShipType[] = [
-    'scout', 'interceptor', 'corvette', 'destroyer',
-    'cruiser', 'battleship', 'artillery', 'mothership'
-  ];
-
+  const types: ShipType[] = ['scout', 'interceptor', 'corvette', 'destroyer', 'cruiser', 'battleship', 'artillery', 'mothership'];
   colors.forEach((color) => {
     types.forEach((type) => {
       const key = `${color}_${type}`;
@@ -49,9 +33,7 @@ function preloadShipImages() {
         const img = new Image();
         const path = getShipImagePath(type, color);
         if (path) {
-          img.onerror = () => {
-            failedImages.add(key);
-          };
+          img.onerror = () => failedImages.add(key);
           img.src = path;
           shipImages.set(key, img);
         }
@@ -61,20 +43,24 @@ function preloadShipImages() {
 }
 
 export const App: React.FC = () => {
+  const store = useGameStore();
   const {
     game,
-    boardHexes,
-    plannedActions,
     selectedShipId,
-    animations,
-    startGame,
+    startNewGame,
+    returnToMenu,
+    rollDice,
+    selectZone,
+    selectShipToDeploy,
+    deployShipToHex,
+    rotateDeployingShip,
+    confirmDeployment,
     selectShip,
     moveShip,
     rotateShip,
     undoLast,
     clearPlans,
     endTurn,
-    returnToMenu,
     getValidMoves,
     getPlannedPosition,
     getPlannedFacing,
@@ -82,8 +68,10 @@ export const App: React.FC = () => {
     getShipRemainingAP,
     getCurrentPlayer,
     isMyTurn,
+    getDeployableHexes,
+    getUndeployedShips,
     removeAnimation,
-  } = useGameStore();
+  } = store;
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 800, height: 600 });
@@ -91,43 +79,35 @@ export const App: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [lastMouse, setLastMouse] = useState({ x: 0, y: 0 });
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const HEX_SIZE = 45;
+  const [diceAnimation, setDiceAnimation] = useState<number | null>(null);
+  const HEX_SIZE = 40;
 
-  // Preload images on mount
   useEffect(() => {
     preloadShipImages();
-    // Give images time to load
     setTimeout(() => setImagesLoaded(true), 500);
   }, []);
 
-  // Handle window resize
   useEffect(() => {
-    const handleResize = () => {
-      setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
-    };
+    const handleResize = () => setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Clean up expired animations
   useEffect(() => {
+    if (!game) return;
     const interval = setInterval(() => {
       const now = Date.now();
-      animations.forEach((anim) => {
-        if (now - anim.startTime > anim.duration) {
-          removeAnimation(anim.id);
-        }
+      game.animations.forEach((anim) => {
+        if (now - anim.startTime > anim.duration) removeAnimation(anim.id);
       });
     }, 100);
     return () => clearInterval(interval);
-  }, [animations, removeAnimation]);
+  }, [game, removeAnimation]);
 
-  // Render game board
   const render = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas || !game) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -135,13 +115,12 @@ export const App: React.FC = () => {
     ctx.save();
     ctx.translate(canvas.width / 2 + cameraOffset.x, canvas.height / 2 + cameraOffset.y);
 
-    // Get valid moves for selected ship
-    const validMoves = selectedShipId ? getValidMoves(selectedShipId) : [];
+    const validMoves = selectedShipId && game.phase === 'battle' ? getValidMoves(selectedShipId) : [];
+    const deployableHexes = game.phase === 'deployment' ? getDeployableHexes() : [];
 
-    // Draw hexes
-    boardHexes.forEach((hex) => {
+    // Draw all hexes
+    game.boardHexes.forEach((hex) => {
       const { x, y } = hexToPixel(hex, HEX_SIZE);
-
       ctx.beginPath();
       for (let i = 0; i < 6; i++) {
         const angle = (Math.PI / 3) * i;
@@ -152,27 +131,40 @@ export const App: React.FC = () => {
       }
       ctx.closePath();
 
-      // Highlight valid moves for selected ship
       let fillColor = '#1a1a2e';
+
+      // Highlight deployment zones
+      if (game.phase === 'zoneSelection' || game.phase === 'deployment') {
+        for (const zone of game.deploymentZones) {
+          if (zone.hexes.some((zh) => hexEqual(zh, hex))) {
+            ctx.globalAlpha = 0.3;
+            fillColor = zone.color;
+            if (zone.ownerId) ctx.globalAlpha = 0.5;
+          }
+        }
+      }
+
+      // Highlight deployable hexes
+      if (deployableHexes.some((dh) => hexEqual(dh, hex))) {
+        fillColor = '#2a5a2a';
+        ctx.globalAlpha = 0.8;
+      }
+
+      // Highlight valid battle moves
       if (validMoves.some((m) => hexEqual(m, hex))) {
-        // Check if this hex has an enemy (attack move)
         const hasEnemy = game.ships.some(
-          (s) => !s.destroyed && hexEqual(s.position, hex) && s.ownerId !== game.currentPlayerId
+          (s) => s.deployed && !s.destroyed && hexEqual(s.position, hex) && s.ownerId !== game.currentPlayerId
         );
-        fillColor = hasEnemy ? '#4a2a2a' : '#2a4a2a'; // Red for attack, green for move
+        fillColor = hasEnemy ? '#5a2a2a' : '#2a5a2a';
+        ctx.globalAlpha = 0.8;
       }
 
       ctx.fillStyle = fillColor;
       ctx.fill();
+      ctx.globalAlpha = 1;
       ctx.strokeStyle = '#3a3a5a';
       ctx.lineWidth = 1;
       ctx.stroke();
-
-      // Draw hex coordinates (debug)
-      // ctx.fillStyle = '#555';
-      // ctx.font = '10px monospace';
-      // ctx.textAlign = 'center';
-      // ctx.fillText(`${hex.q},${hex.r}`, x, y);
     });
 
     // Draw debris
@@ -181,27 +173,20 @@ export const App: React.FC = () => {
       ctx.fillStyle = '#666666';
       ctx.globalAlpha = 0.7;
       for (let i = 0; i < 8; i++) {
-        const angle = (i / 8) * Math.PI * 2 + Math.sin(i * 1.7) * 0.3;
+        const angle = (i / 8) * Math.PI * 2;
         const dist = 8 + Math.sin(i * 2.3) * 6;
-        const size = 3 + Math.cos(i * 1.5) * 2;
-        ctx.fillRect(
-          x + Math.cos(angle) * dist - size / 2,
-          y + Math.sin(angle) * dist - size / 2,
-          size,
-          size
-        );
+        ctx.fillRect(x + Math.cos(angle) * dist - 2, y + Math.sin(angle) * dist - 2, 4, 4);
       }
       ctx.globalAlpha = 1;
     });
 
     // Draw ships
     game.ships.forEach((ship) => {
-      if (ship.destroyed) return;
+      if (!ship.deployed || ship.destroyed) return;
 
-      const pos = getPlannedPosition(ship.id);
-      const facing = getPlannedFacing(ship.id);
+      const pos = game.phase === 'battle' ? getPlannedPosition(ship.id) : ship.position;
+      const facing = game.phase === 'battle' ? getPlannedFacing(ship.id) : ship.facing;
       const { x, y } = hexToPixel(pos, HEX_SIZE);
-
       const owner = game.players.find((p) => p.id === ship.ownerId);
       const colorName = owner?.color || 'blue';
       const imageKey = `${colorName}_${ship.type}`;
@@ -209,18 +194,13 @@ export const App: React.FC = () => {
 
       ctx.save();
       ctx.translate(x, y);
-
-      // Rotate based on facing direction
-      // Ship images point East (0 degrees) by default, so rotate accordingly
       const rotation = (directionToAngle(facing) * Math.PI) / 180;
       ctx.rotate(rotation);
 
-      // Draw ship image or fallback to shape
       if (shipImage && shipImage.complete && shipImage.naturalWidth > 0 && imagesLoaded && !failedImages.has(imageKey)) {
         const imgSize = HEX_SIZE * 1.4;
         ctx.drawImage(shipImage, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
       } else {
-        // Fallback triangle shape
         ctx.beginPath();
         const size = HEX_SIZE * 0.6;
         ctx.moveTo(size, 0);
@@ -228,21 +208,18 @@ export const App: React.FC = () => {
         ctx.lineTo(-size * 0.3, 0);
         ctx.lineTo(-size * 0.5, size * 0.6);
         ctx.closePath();
-
         ctx.fillStyle = PLAYER_COLORS[colorName] || '#ffffff';
         ctx.fill();
-
         if (ship.type === 'mothership') {
           ctx.strokeStyle = '#ffffff';
           ctx.lineWidth = 2;
           ctx.stroke();
         }
       }
-
       ctx.restore();
 
       // Selection highlight
-      if (ship.id === selectedShipId) {
+      if (ship.id === selectedShipId || ship.id === game.shipToDeployId) {
         ctx.beginPath();
         ctx.arc(x, y, HEX_SIZE * 0.9, 0, Math.PI * 2);
         ctx.strokeStyle = '#ffff00';
@@ -252,45 +229,24 @@ export const App: React.FC = () => {
         ctx.setLineDash([]);
       }
 
-      // Facing direction indicator (small arrow)
-      ctx.save();
-      ctx.translate(x, y);
-      const indicatorAngle = (directionToAngle(facing) * Math.PI) / 180;
-      ctx.rotate(indicatorAngle);
-      ctx.beginPath();
-      ctx.moveTo(HEX_SIZE * 0.8, 0);
-      ctx.lineTo(HEX_SIZE * 0.6, -4);
-      ctx.lineTo(HEX_SIZE * 0.6, 4);
-      ctx.closePath();
-      ctx.fillStyle = PLAYER_COLORS[colorName] || '#ffffff';
-      ctx.globalAlpha = 0.8;
-      ctx.fill();
-      ctx.globalAlpha = 1;
-      ctx.restore();
-
-      // Ship type label
+      // Ship label
       ctx.fillStyle = '#cccccc';
-      ctx.font = '11px sans-serif';
+      ctx.font = '10px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(SHIP_NAMES[ship.type].substring(0, 3), x, y + HEX_SIZE + 14);
+      ctx.fillText(SHIP_NAMES[ship.type].substring(0, 3), x, y + HEX_SIZE + 12);
     });
 
     // Draw animations
     const now = Date.now();
-    animations.forEach((anim) => {
+    game.animations.forEach((anim) => {
       const elapsed = now - anim.startTime;
       const progress = Math.min(elapsed / anim.duration, 1);
       const { x, y } = hexToPixel(anim.position, HEX_SIZE);
 
       if (anim.type === 'explosion') {
-        // Explosion animation
         const radius = HEX_SIZE * (0.5 + progress * 1.5);
-        const alpha = 1 - progress;
-
         ctx.save();
-        ctx.globalAlpha = alpha;
-
-        // Orange/red explosion
+        ctx.globalAlpha = 1 - progress;
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
         gradient.addColorStop(0, '#ffaa00');
         gradient.addColorStop(0.5, '#ff4400');
@@ -299,38 +255,16 @@ export const App: React.FC = () => {
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.fill();
-
-        // Sparks
-        for (let i = 0; i < 12; i++) {
-          const angle = (i / 12) * Math.PI * 2;
-          const sparkDist = radius * (0.8 + Math.random() * 0.4);
-          ctx.fillStyle = '#ffcc00';
-          ctx.fillRect(
-            x + Math.cos(angle) * sparkDist - 2,
-            y + Math.sin(angle) * sparkDist - 2,
-            4,
-            4
-          );
-        }
-
         ctx.restore();
       } else if (anim.type === 'thruster' && anim.direction !== undefined) {
-        // Thruster flame animation
         const flameLength = HEX_SIZE * 0.8 * (1 - progress);
-        const alpha = 1 - progress;
-
         ctx.save();
         ctx.translate(x, y);
-        // Thruster points opposite to movement direction
-        const thrusterAngle = ((directionToAngle(anim.direction) + 180) * Math.PI) / 180;
-        ctx.rotate(thrusterAngle);
-
-        ctx.globalAlpha = alpha;
+        ctx.rotate(((directionToAngle(anim.direction) + 180) * Math.PI) / 180);
+        ctx.globalAlpha = 1 - progress;
         const gradient = ctx.createLinearGradient(0, 0, flameLength, 0);
         gradient.addColorStop(0, '#00aaff');
-        gradient.addColorStop(0.5, '#0066ff');
         gradient.addColorStop(1, 'transparent');
-
         ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.moveTo(0, -6);
@@ -338,64 +272,31 @@ export const App: React.FC = () => {
         ctx.lineTo(0, 6);
         ctx.closePath();
         ctx.fill();
-
-        ctx.restore();
-      } else if (anim.type === 'laser' && anim.direction !== undefined) {
-        // Laser beam animation
-        const alpha = 1 - progress;
-        ctx.save();
-        ctx.translate(x, y);
-        const laserAngle = (directionToAngle(anim.direction) * Math.PI) / 180;
-        ctx.rotate(laserAngle);
-
-        ctx.globalAlpha = alpha;
-        ctx.strokeStyle = '#ff0000';
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.lineTo(HEX_SIZE * 3, 0);
-        ctx.stroke();
-
         ctx.restore();
       }
     });
 
     ctx.restore();
-  }, [
-    game,
-    boardHexes,
-    selectedShipId,
-    cameraOffset,
-    animations,
-    imagesLoaded,
-    getPlannedPosition,
-    getPlannedFacing,
-    getValidMoves,
-  ]);
+  }, [game, selectedShipId, cameraOffset, imagesLoaded, getPlannedPosition, getPlannedFacing, getValidMoves, getDeployableHexes]);
 
   useEffect(() => {
     render();
-  }, [render, plannedActions]);
+  }, [render]);
 
-  // Animation frame loop for smooth animations
   useEffect(() => {
-    if (animations.length === 0) return;
-
-    let animationFrame: number;
+    if (!game || game.animations.length === 0) return;
+    let frame: number;
     const animate = () => {
       render();
-      animationFrame = requestAnimationFrame(animate);
+      frame = requestAnimationFrame(animate);
     };
-    animationFrame = requestAnimationFrame(animate);
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [game?.animations.length, render]);
 
-    return () => cancelAnimationFrame(animationFrame);
-  }, [animations.length, render]);
-
-  // Handle canvas click
   const handleCanvasClick = useCallback(
     (e: React.MouseEvent) => {
-      if (!game || !isMyTurn()) return;
-
+      if (!game) return;
       const canvas = canvasRef.current;
       if (!canvas) return;
 
@@ -403,39 +304,41 @@ export const App: React.FC = () => {
       const mouseX = e.clientX - rect.left - canvas.width / 2 - cameraOffset.x;
       const mouseY = e.clientY - rect.top - canvas.height / 2 - cameraOffset.y;
 
-      // Find clicked hex
-      let clickedHex: HexCoord | null = null;
-      let minDist = Infinity;
+      const clickedHex = pixelToHex(mouseX, mouseY, HEX_SIZE);
 
-      boardHexes.forEach((hex) => {
-        const { x, y } = hexToPixel(hex, HEX_SIZE);
-        const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
-        if (dist < HEX_SIZE && dist < minDist) {
-          minDist = dist;
-          clickedHex = hex;
+      if (game.phase === 'zoneSelection') {
+        // Check if clicked a zone
+        const currentSelector = game.zoneSelectionOrder[game.currentZoneSelector];
+        const currentPlayer = game.players.find((p) => p.id === currentSelector);
+        if (currentPlayer && !currentPlayer.isAI) {
+          for (const zone of game.deploymentZones) {
+            if (zone.ownerId === null && zone.hexes.some((h) => hexEqual(h, clickedHex))) {
+              selectZone(currentSelector, zone.id);
+              break;
+            }
+          }
         }
-      });
-
-      if (!clickedHex) return;
-
-      // Check if clicked on a ship
-      const clickedShip = game.ships.find(
-        (s) => !s.destroyed && hexEqual(getPlannedPosition(s.id), clickedHex!)
-      );
-
-      if (clickedShip && clickedShip.ownerId === game.currentPlayerId) {
-        selectShip(clickedShip.id);
-      } else if (selectedShipId) {
-        // Try to move selected ship
-        moveShip(selectedShipId, clickedHex);
+      } else if (game.phase === 'deployment') {
+        const deployableHexes = getDeployableHexes();
+        if (deployableHexes.some((h) => hexEqual(h, clickedHex))) {
+          deployShipToHex(clickedHex);
+        }
+      } else if (game.phase === 'battle' && isMyTurn()) {
+        const clickedShip = game.ships.find(
+          (s) => s.deployed && !s.destroyed && hexEqual(getPlannedPosition(s.id), clickedHex)
+        );
+        if (clickedShip && clickedShip.ownerId === game.currentPlayerId) {
+          selectShip(clickedShip.id);
+        } else if (selectedShipId) {
+          moveShip(selectedShipId, clickedHex);
+        }
       }
     },
-    [game, boardHexes, cameraOffset, selectedShipId, selectShip, moveShip, getPlannedPosition, isMyTurn]
+    [game, cameraOffset, selectZone, deployShipToHex, selectShip, moveShip, selectedShipId, isMyTurn, getPlannedPosition, getDeployableHexes]
   );
 
-  // Camera drag handlers
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (e.button === 0) {
+    if (e.button === 2) {
       setIsDragging(true);
       setLastMouse({ x: e.clientX, y: e.clientY });
     }
@@ -452,133 +355,315 @@ export const App: React.FC = () => {
   };
 
   const handleMouseUp = () => setIsDragging(false);
+  const handleContextMenu = (e: React.MouseEvent) => e.preventDefault();
 
-  const currentPlayer = getCurrentPlayer();
-  const totalPlannedAP = getTotalPlannedAP();
-  const remainingAP = game ? game.playerAPRemaining - totalPlannedAP : 0;
+  const handleDiceRoll = () => {
+    if (!game) return;
+    const localPlayer = game.players.find((p) => !p.isAI);
+    if (localPlayer && localPlayer.diceRoll === null) {
+      setDiceAnimation(1);
+      let count = 0;
+      const interval = setInterval(() => {
+        setDiceAnimation(Math.floor(Math.random() * 6) + 1);
+        count++;
+        if (count > 10) {
+          clearInterval(interval);
+          rollDice(localPlayer.id);
+          setDiceAnimation(null);
+        }
+      }, 100);
+    }
+  };
 
-  // Main menu
+  // RENDER BASED ON PHASE
   if (!game) {
     return (
       <div className="menu">
         <h1>HEXARCH</h1>
-        <h2>Strategic Hex Combat</h2>
-        <button onClick={() => startGame(true)}>Play vs AI</button>
-        <button onClick={() => startGame(false)}>Local 2 Player</button>
+        <h2>Strategic Hex-Based Combat</h2>
+        <div className="menu-buttons">
+          <button onClick={() => startNewGame(true)}>Play vs AI</button>
+          <button onClick={() => startNewGame(false)}>Local 2 Player</button>
+        </div>
+        <div className="menu-info">
+          <p>Roll dice to determine deployment order</p>
+          <p>Choose your deployment zone strategically</p>
+          <p>Place your fleet in your zone</p>
+          <p>Destroy the enemy Mothership to win!</p>
+        </div>
       </div>
     );
   }
 
-  // Game ended
-  if (game.winnerId) {
-    const winner = game.players.find((p) => p.id === game.winnerId);
+  if (game.phase === 'diceRoll') {
     return (
-      <div className="menu">
-        <h1>{winner?.name} Wins!</h1>
-        <h2>Turn {game.turnNumber}</h2>
-        <button onClick={returnToMenu}>Back to Menu</button>
-      </div>
-    );
-  }
-
-  const selectedShip = selectedShipId ? game.ships.find((s) => s.id === selectedShipId) : null;
-
-  return (
-    <div className="game">
-      <canvas
-        ref={canvasRef}
-        width={canvasSize.width}
-        height={canvasSize.height}
-        onClick={handleCanvasClick}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-      />
-
-      {/* Top bar */}
-      <div className="top-bar">
-        <div>Turn: {game.turnNumber}</div>
-        <div style={{ color: PLAYER_COLORS[currentPlayer?.color || 'blue'] }}>
-          {currentPlayer?.name}'s Turn
-          {!isMyTurn() && ' (AI thinking...)'}
-        </div>
-        <div>
-          AP: {remainingAP} / {PLAYER_MAX_AP}
-        </div>
-      </div>
-
-      {/* Left panel - Ship list */}
-      <div className="left-panel">
-        <h3>Your Ships</h3>
-        {game.ships
-          .filter((s) => s.ownerId === game.currentPlayerId && !s.destroyed)
-          .map((ship) => (
-            <div
-              key={ship.id}
-              className={`ship-item ${ship.id === selectedShipId ? 'selected' : ''}`}
-              onClick={() => selectShip(ship.id)}
-            >
-              <div>{SHIP_NAMES[ship.type]}</div>
-              <div className="ship-ap">
-                AP: {getShipRemainingAP(ship.id)} / {SHIP_AP[ship.type]}
-              </div>
+      <div className="phase-screen">
+        <h2>Roll for Initiative</h2>
+        <p>Higher roll selects deployment zone first</p>
+        <div className="dice-area">
+          {game.players.map((player) => (
+            <div key={player.id} className="player-dice">
+              <h3 style={{ color: PLAYER_COLORS[player.color] }}>{player.name}</h3>
+              {player.diceRoll !== null ? (
+                <div className="dice-result">{player.diceRoll}</div>
+              ) : player.isAI ? (
+                <div className="dice-waiting">Rolling...</div>
+              ) : (
+                <button onClick={handleDiceRoll} className="roll-button">
+                  {diceAnimation !== null ? diceAnimation : 'Roll Dice'}
+                </button>
+              )}
             </div>
           ))}
+        </div>
       </div>
+    );
+  }
 
-      {/* Right panel - Controls */}
-      {isMyTurn() && (
-        <div className="right-panel">
-          {selectedShip && (
+  if (game.phase === 'zoneSelection') {
+    const currentSelector = game.zoneSelectionOrder[game.currentZoneSelector];
+    const currentPlayer = game.players.find((p) => p.id === currentSelector);
+
+    return (
+      <div className="game">
+        <canvas
+          ref={canvasRef}
+          width={canvasSize.width}
+          height={canvasSize.height}
+          onClick={handleCanvasClick}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onContextMenu={handleContextMenu}
+        />
+        <div className="phase-overlay">
+          <h2>Zone Selection</h2>
+          <p style={{ color: PLAYER_COLORS[currentPlayer?.color || 'blue'] }}>
+            {currentPlayer?.name}'s turn to select zone
+          </p>
+          {currentPlayer?.isAI ? (
+            <p>AI is choosing...</p>
+          ) : (
+            <p>Click on a highlighted zone to claim it</p>
+          )}
+          <div className="zone-list">
+            {game.deploymentZones.map((zone) => (
+              <div key={zone.id} className="zone-item" style={{ borderColor: zone.color }}>
+                {zone.name}: {zone.ownerId ? game.players.find((p) => p.id === zone.ownerId)?.name : 'Available'}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (game.phase === 'deployment') {
+    const deployingPlayer = game.players.find((p) => p.id === game.deployingPlayerId);
+    const undeployedShips = game.deployingPlayerId ? getUndeployedShips(game.deployingPlayerId) : [];
+    const currentShip = game.ships.find((s) => s.id === game.shipToDeployId);
+
+    return (
+      <div className="game">
+        <canvas
+          ref={canvasRef}
+          width={canvasSize.width}
+          height={canvasSize.height}
+          onClick={handleCanvasClick}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onContextMenu={handleContextMenu}
+        />
+        <div className="deployment-panel">
+          <h2>Deployment Phase</h2>
+          <p style={{ color: PLAYER_COLORS[deployingPlayer?.color || 'blue'] }}>
+            {deployingPlayer?.name} deploying
+          </p>
+          {deployingPlayer?.isAI ? (
+            <p>AI is deploying fleet...</p>
+          ) : (
             <>
-              <h3>Rotate {SHIP_NAMES[selectedShip.type]}</h3>
-              <div className="rotate-buttons">
-                {([5, 0, 1, 4, -1, 2] as (HexDirection | -1)[]).map((dir, idx) => {
-                  if (dir === -1) return <div key={idx} />;
-                  const dirLabels = ['E', 'SE', 'SW', 'W', 'NW', 'NE'];
-                  const currentFacing = getPlannedFacing(selectedShipId!);
-                  const isCurrentDir = currentFacing === dir;
-                  return (
-                    <button
-                      key={dir}
-                      onClick={() => rotateShip(selectedShipId!, dir)}
-                      className="rotate-btn"
-                      disabled={isCurrentDir}
-                      style={{ opacity: isCurrentDir ? 0.5 : 1 }}
-                    >
-                      {dirLabels[dir]}
-                    </button>
-                  );
-                })}
+              {currentShip && (
+                <div className="current-ship">
+                  <h3>Placing: {SHIP_NAMES[currentShip.type]}</h3>
+                  <p>Click on a green hex to place</p>
+                  {currentShip.deployed && (
+                    <div className="rotation-controls">
+                      <p>Rotate ship:</p>
+                      <div className="rotate-buttons">
+                        {[0, 1, 2, 3, 4, 5].map((dir) => (
+                          <button
+                            key={dir}
+                            onClick={() => rotateDeployingShip(dir as HexDirection)}
+                            className={currentShip.facing === dir ? 'active' : ''}
+                          >
+                            {['E', 'SE', 'SW', 'W', 'NW', 'NE'][dir]}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="ship-queue">
+                <h4>Ships to deploy: {undeployedShips.length}</h4>
+                {undeployedShips.map((ship) => (
+                  <div
+                    key={ship.id}
+                    className={`queue-ship ${ship.id === game.shipToDeployId ? 'selected' : ''}`}
+                    onClick={() => selectShipToDeploy(ship.id)}
+                  >
+                    {SHIP_NAMES[ship.type]}
+                  </div>
+                ))}
               </div>
-              <div style={{ fontSize: '12px', marginBottom: '10px', color: '#888' }}>
-                Facing: {['East', 'SE', 'SW', 'West', 'NW', 'NE'][getPlannedFacing(selectedShipId!)]}
-              </div>
+              {undeployedShips.length === 0 && (
+                <button onClick={confirmDeployment} className="confirm-button">
+                  Confirm Deployment
+                </button>
+              )}
             </>
           )}
-
-          <h3>Actions</h3>
-          <button onClick={undoLast} disabled={plannedActions.length === 0}>
-            Undo Last
-          </button>
-          <button onClick={clearPlans} disabled={plannedActions.length === 0}>
-            Clear All
-          </button>
-          <button onClick={endTurn} className="end-turn-btn">
-            End Turn
-          </button>
-          <button onClick={returnToMenu}>Quit Game</button>
         </div>
-      )}
+      </div>
+    );
+  }
 
-      {/* Planned moves indicator */}
-      {totalPlannedAP > 0 && (
-        <div className="planned-indicator">
-          Planned: {totalPlannedAP} AP | {plannedActions.length} action(s)
+  if (game.phase === 'battle') {
+    const currentPlayer = getCurrentPlayer();
+    const totalPlannedAP = getTotalPlannedAP();
+    const remainingAP = game.playerAPRemaining - totalPlannedAP;
+    const selectedShip = selectedShipId ? game.ships.find((s) => s.id === selectedShipId) : null;
+
+    return (
+      <div className="game">
+        <canvas
+          ref={canvasRef}
+          width={canvasSize.width}
+          height={canvasSize.height}
+          onClick={handleCanvasClick}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onContextMenu={handleContextMenu}
+        />
+        <div className="top-bar">
+          <div>Turn: {game.turnNumber}</div>
+          <div style={{ color: PLAYER_COLORS[currentPlayer?.color || 'blue'] }}>
+            {currentPlayer?.name}'s Turn
+            {!isMyTurn() && ' (AI thinking...)'}
+          </div>
+          <div>
+            AP: {remainingAP} / {PLAYER_MAX_AP}
+          </div>
         </div>
-      )}
-    </div>
-  );
+
+        <div className="left-panel">
+          <h3>Your Fleet</h3>
+          {game.ships
+            .filter((s) => s.ownerId === game.currentPlayerId && s.deployed && !s.destroyed)
+            .map((ship) => (
+              <div
+                key={ship.id}
+                className={`ship-item ${ship.id === selectedShipId ? 'selected' : ''}`}
+                onClick={() => selectShip(ship.id)}
+              >
+                <div>{SHIP_NAMES[ship.type]}</div>
+                <div className="ship-ap">
+                  AP: {getShipRemainingAP(ship.id)} / {SHIP_AP[ship.type]}
+                </div>
+              </div>
+            ))}
+        </div>
+
+        {isMyTurn() && (
+          <div className="right-panel">
+            {selectedShip && (
+              <>
+                <h3>Rotate {SHIP_NAMES[selectedShip.type]}</h3>
+                <div className="rotate-grid">
+                  {[5, 0, 1, 4, -1, 2, 3].map((dir, idx) => {
+                    if (dir === -1) return <div key={idx} />;
+                    const labels = ['E', 'SE', 'SW', 'W', 'NW', 'NE'];
+                    const currentFacing = getPlannedFacing(selectedShipId!);
+                    return (
+                      <button
+                        key={dir}
+                        onClick={() => rotateShip(selectedShipId!, dir as HexDirection)}
+                        disabled={currentFacing === dir}
+                        className={currentFacing === dir ? 'current' : ''}
+                      >
+                        {labels[dir]}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className="facing-info">
+                  Facing: {['East', 'SE', 'SW', 'West', 'NW', 'NE'][getPlannedFacing(selectedShipId!)]}
+                </div>
+              </>
+            )}
+            <h3>Actions</h3>
+            <button onClick={undoLast} disabled={game.plannedActions.length === 0}>
+              Undo Last
+            </button>
+            <button onClick={clearPlans} disabled={game.plannedActions.length === 0}>
+              Clear All
+            </button>
+            <button onClick={endTurn} className="end-turn-btn">
+              End Turn
+            </button>
+            <button onClick={returnToMenu} className="quit-btn">
+              Quit Game
+            </button>
+          </div>
+        )}
+
+        {totalPlannedAP > 0 && (
+          <div className="planned-indicator">
+            Planned: {totalPlannedAP} AP | {game.plannedActions.length} action(s)
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (game.phase === 'ended') {
+    const winner = game.players.find((p) => p.id === game.winnerId);
+    const duration = Math.floor(game.stats.gameDuration / 1000);
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+
+    return (
+      <div className="end-screen">
+        <h1 style={{ color: PLAYER_COLORS[winner?.color || 'blue'] }}>{winner?.name} Wins!</h1>
+        <div className="game-stats">
+          <h3>Game Statistics</h3>
+          <p>Total Turns: {game.stats.turnCount}</p>
+          <p>
+            Duration: {minutes}:{seconds.toString().padStart(2, '0')}
+          </p>
+          <div className="player-stats">
+            {game.players.map((player) => (
+              <div key={player.id} className="stat-block">
+                <h4 style={{ color: PLAYER_COLORS[player.color] }}>{player.name}</h4>
+                <p>Ships Destroyed: {game.stats.shipsDestroyed[player.id] || 0}</p>
+                <p>Movements Made: {game.stats.totalMovements[player.id] || 0}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="end-buttons">
+          <button onClick={returnToMenu}>Return to Menu</button>
+          <button onClick={() => startNewGame(game.players.some((p) => p.isAI))}>Play Again</button>
+        </div>
+      </div>
+    );
+  }
+
+  return <div>Unknown phase: {game.phase}</div>;
 };
