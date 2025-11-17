@@ -1,274 +1,332 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Lobby } from './components/Lobby';
-import { HexRenderer } from './components/HexRenderer';
-import { GameUI } from './components/GameUI';
-import { DiceRoll } from './components/DiceRoll';
-import { DeploymentPhase } from './components/DeploymentPhase';
-import { MapEditor } from './components/MapEditor';
-import { ReplayViewer } from './components/ReplayViewer';
-import { Tutorial } from './components/Tutorial';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useGameStore } from './game/gameStore';
-import { GameSettings, GameMap, SHIP_STATS } from './types/game';
-import { AIPlayer, AIDifficulty } from './ai/AIPlayer';
-import { soundManager } from './sounds/soundManager';
-import { MAP_PRESETS } from './game/mapGenerator';
+import { HexCoord, HexDirection, SHIP_STATS, PLAYER_MAX_AP } from './types/game';
+import { hexToPixel, directionToAngle, hexEqual, getNeighbor } from './engine/hexGrid';
 import './styles.css';
 
-type Screen = 'lobby' | 'game' | 'mapEditor';
-
 export const App: React.FC = () => {
-  const [screen, setScreen] = useState<Screen>('lobby');
-  const [showMapEditor, setShowMapEditor] = useState(false);
-  const [aiPlayer, setAiPlayer] = useState<AIPlayer | null>(null);
-  const [isTutorial, setIsTutorial] = useState(false);
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
   const {
-    gameState,
-    localPlayerId,
-    initGame,
-    addPlayer,
-    nextPhase,
-    rollDice,
-    selectDeploymentZone,
-    isReplayMode,
-    setReplayMode,
-    confirmTurn,
-    isMyTurn,
+    game,
+    boardHexes,
+    plannedActions,
+    selectedShipId,
+    startGame,
+    selectShip,
+    planMove,
+    planRotate,
+    undoLastPlan,
+    clearPlans,
+    endTurn,
+    returnToMenu,
+    getPlannedPosition,
+    getPlannedFacing,
+    getTotalPlannedAP,
+    getShipPlannedAP,
     getCurrentPlayer,
+    isCurrentPlayerAI,
   } = useGameStore();
 
-  // Initialize sound system
-  useEffect(() => {
-    soundManager.init();
-  }, []);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [canvasSize, setCanvasSize] = useState({ width: 800, height: 600 });
+  const [cameraOffset, setCameraOffset] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [lastMouse, setLastMouse] = useState({ x: 0, y: 0 });
+  const HEX_SIZE = 40;
 
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+      setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
     };
-
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // AI turn handling
-  useEffect(() => {
-    if (!gameState || !aiPlayer || gameState.phase !== 'battle') return;
+  // Render game board
+  const render = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !game) return;
 
-    const currentPlayer = getCurrentPlayer();
-    if (!currentPlayer || currentPlayer.id === localPlayerId) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-    // AI's turn
-    const aiPlayerObj = gameState.players.find((p) => p.id !== localPlayerId);
-    if (!aiPlayerObj) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    ctx.translate(canvas.width / 2 + cameraOffset.x, canvas.height / 2 + cameraOffset.y);
 
-    // Small delay for AI thinking
-    const timer = setTimeout(() => {
-      const moves = aiPlayer.calculateTurn(gameState);
+    // Draw hexes
+    boardHexes.forEach((hex) => {
+      const { x, y } = hexToPixel(hex, HEX_SIZE);
 
-      // Apply AI moves
-      moves.forEach((move) => {
-        useGameStore.getState().addPendingMove(
-          move.shipId,
-          move.to as { q: number; r: number }
-        );
-      });
+      ctx.beginPath();
+      for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI / 3) * i;
+        const hx = x + HEX_SIZE * Math.cos(angle);
+        const hy = y + HEX_SIZE * Math.sin(angle);
+        if (i === 0) ctx.moveTo(hx, hy);
+        else ctx.lineTo(hx, hy);
+      }
+      ctx.closePath();
 
-      // Confirm AI turn
-      setTimeout(() => {
-        confirmTurn();
-      }, 1000);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, [gameState, aiPlayer, localPlayerId, getCurrentPlayer, confirmTurn]);
-
-  // Time countdown
-  useEffect(() => {
-    if (!gameState || gameState.phase !== 'battle') return;
-
-    const timer = setInterval(() => {
-      const currentPlayer = getCurrentPlayer();
-      if (!currentPlayer) return;
-
-      useGameStore.getState().updatePlayerTime(
-        currentPlayer.id,
-        currentPlayer.timeRemaining - 1
-      );
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [gameState, getCurrentPlayer]);
-
-  const handleStartGame = useCallback(
-    (settings: GameSettings, isAI: boolean, aiDifficulty?: string) => {
-      // Initialize game
-      const playerId = 'local_player';
-      initGame(settings, playerId);
-
-      // Add local player
-      const localPlayer = addPlayer('Player', 'blue');
-      useGameStore.getState().localPlayerId = localPlayer.id;
-
-      if (isAI) {
-        // Add AI player
-        const difficulty = (aiDifficulty as AIDifficulty) || 'medium';
-        const aiPlayerObj = addPlayer(
-          `AI (${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)})`,
-          'red'
-        );
-
-        if (aiDifficulty === 'tutorial') {
-          setIsTutorial(true);
-          setAiPlayer(new AIPlayer(aiPlayerObj.id, 'easy'));
-        } else {
-          setAiPlayer(new AIPlayer(aiPlayerObj.id, difficulty));
+      // Highlight valid moves for selected ship
+      let fillColor = '#1a1a2e';
+      if (selectedShipId) {
+        const selectedPos = getPlannedPosition(selectedShipId);
+        for (let dir = 0; dir < 6; dir++) {
+          if (hexEqual(getNeighbor(selectedPos, dir as HexDirection), hex)) {
+            fillColor = '#2a3a2a';
+            break;
+          }
         }
       }
 
-      // Set the map
-      if (MAP_PRESETS[settings.mapId]) {
-        const map = MAP_PRESETS[settings.mapId]();
-        useGameStore.setState((state) => ({
-          gameState: state.gameState
-            ? { ...state.gameState, map }
-            : null,
-        }));
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+      ctx.strokeStyle = '#3a3a5a';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // Draw debris
+    game.debris.forEach((debris) => {
+      const { x, y } = hexToPixel(debris.position, HEX_SIZE);
+      ctx.fillStyle = '#555555';
+      for (let i = 0; i < 5; i++) {
+        const angle = (i / 5) * Math.PI * 2;
+        const dist = 10 + Math.sin(i * 2.3) * 5;
+        ctx.fillRect(x + Math.cos(angle) * dist - 3, y + Math.sin(angle) * dist - 3, 6, 6);
+      }
+    });
+
+    // Draw ships
+    game.ships.forEach((ship) => {
+      if (ship.destroyed) return;
+
+      const pos = getPlannedPosition(ship.id);
+      const facing = getPlannedFacing(ship.id);
+      const { x, y } = hexToPixel(pos, HEX_SIZE);
+
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate((directionToAngle(facing) * Math.PI) / 180);
+
+      // Ship shape
+      ctx.beginPath();
+      const size = HEX_SIZE * 0.6;
+      ctx.moveTo(size, 0);
+      ctx.lineTo(-size * 0.5, -size * 0.6);
+      ctx.lineTo(-size * 0.3, 0);
+      ctx.lineTo(-size * 0.5, size * 0.6);
+      ctx.closePath();
+
+      const owner = game.players.find((p) => p.id === ship.ownerId);
+      ctx.fillStyle = owner?.color || '#ffffff';
+      ctx.fill();
+
+      // Mothership special marker
+      if (ship.type === 'mothership') {
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
       }
 
-      setScreen('game');
-      nextPhase(); // Move to dice roll
+      ctx.restore();
+
+      // Selection highlight
+      if (ship.id === selectedShipId) {
+        ctx.beginPath();
+        ctx.arc(x, y, HEX_SIZE * 0.8, 0, Math.PI * 2);
+        ctx.strokeStyle = '#ffff00';
+        ctx.lineWidth = 3;
+        ctx.setLineDash([5, 5]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      // Ship type label
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '10px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(SHIP_STATS[ship.type].name[0], x, y + HEX_SIZE + 12);
+    });
+
+    ctx.restore();
+  }, [game, boardHexes, selectedShipId, cameraOffset, getPlannedPosition, getPlannedFacing]);
+
+  useEffect(() => {
+    render();
+  }, [render, plannedActions]);
+
+  // Handle canvas click
+  const handleCanvasClick = useCallback(
+    (e: React.MouseEvent) => {
+      if (!game || isCurrentPlayerAI()) return;
+
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left - canvas.width / 2 - cameraOffset.x;
+      const mouseY = e.clientY - rect.top - canvas.height / 2 - cameraOffset.y;
+
+      // Find clicked hex
+      let clickedHex: HexCoord | null = null;
+      let minDist = Infinity;
+
+      boardHexes.forEach((hex) => {
+        const { x, y } = hexToPixel(hex, HEX_SIZE);
+        const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+        if (dist < HEX_SIZE && dist < minDist) {
+          minDist = dist;
+          clickedHex = hex;
+        }
+      });
+
+      if (!clickedHex) return;
+
+      // Check if clicked on a ship
+      const clickedShip = game.ships.find(
+        (s) => !s.destroyed && hexEqual(getPlannedPosition(s.id), clickedHex!)
+      );
+
+      if (clickedShip && clickedShip.ownerId === game.currentPlayerId) {
+        selectShip(clickedShip.id);
+      } else if (selectedShipId) {
+        // Try to move selected ship
+        planMove(selectedShipId, clickedHex);
+      }
     },
-    [initGame, addPlayer, nextPhase]
+    [game, boardHexes, cameraOffset, selectedShipId, selectShip, planMove, getPlannedPosition, isCurrentPlayerAI]
   );
 
-  const handleQuickMatch = useCallback(() => {
-    // For demo, just start a game against AI
-    handleStartGame(
-      {
-        mode: '1v1',
-        isPrivate: false,
-        mapId: 'classic',
-        timeControl: { deploymentTime: 180, gameTime: 600 },
-      },
-      true,
-      'medium'
+  // Camera drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (e.button === 0) {
+      setIsDragging(true);
+      setLastMouse({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      setCameraOffset((prev) => ({
+        x: prev.x + e.clientX - lastMouse.x,
+        y: prev.y + e.clientY - lastMouse.y,
+      }));
+      setLastMouse({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  const handleMouseUp = () => setIsDragging(false);
+
+  const currentPlayer = getCurrentPlayer();
+  const totalPlannedAP = getTotalPlannedAP();
+  const remainingAP = game ? game.playerAPRemaining - totalPlannedAP : 0;
+
+  // Main menu
+  if (!game) {
+    return (
+      <div className="menu">
+        <h1>HEXARCH</h1>
+        <h2>Strategic Hex Combat</h2>
+        <button onClick={() => startGame(true)}>Play vs AI</button>
+        <button onClick={() => startGame(false)}>Local 2 Player</button>
+      </div>
     );
-  }, [handleStartGame]);
+  }
 
-  const handleHostMatch = useCallback((settings: GameSettings) => {
-    // For demo, start an AI game with these settings
-    handleStartGame(settings, true, 'medium');
-  }, [handleStartGame]);
-
-  const handleJoinMatch = useCallback((code: string) => {
-    // For demo, just start a game
-    handleQuickMatch();
-  }, [handleQuickMatch]);
-
-  const handleDiceRollComplete = useCallback(() => {
-    if (!gameState) return;
-
-    // Auto-select zones based on dice rolls (highest gets first pick)
-    const sortedPlayers = [...gameState.players].sort(
-      (a, b) => (b.diceRoll || 0) - (a.diceRoll || 0)
+  // Game ended
+  if (game.winnerId) {
+    const winner = game.players.find((p) => p.id === game.winnerId);
+    return (
+      <div className="menu">
+        <h1>{winner?.name} Wins!</h1>
+        <button onClick={returnToMenu}>Back to Menu</button>
+      </div>
     );
-
-    sortedPlayers.forEach((player, index) => {
-      // Assign opposite zones for 1v1
-      if (index === 0) {
-        selectDeploymentZone(player.id, 0); // East
-      } else {
-        selectDeploymentZone(player.id, 2); // West (opposite)
-      }
-    });
-
-    nextPhase(); // Move to zone selection
-    setTimeout(() => nextPhase(), 500); // Then to deployment
-  }, [gameState, selectDeploymentZone, nextPhase]);
-
-  const handleDeploymentComplete = useCallback(() => {
-    nextPhase(); // Move to battle phase
-    soundManager.play('turn_start');
-  }, [nextPhase]);
-
-  const handleSaveMap = useCallback((map: GameMap) => {
-    // In a real app, this would save to server/storage
-    console.log('Map saved:', map);
-    setShowMapEditor(false);
-  }, []);
-
-  const handleTutorialComplete = useCallback(() => {
-    setIsTutorial(false);
-  }, []);
-
-  const handleExitGame = useCallback(() => {
-    setScreen('lobby');
-    setAiPlayer(null);
-    setIsTutorial(false);
-    useGameStore.setState({
-      gameState: null,
-      localPlayerId: null,
-      pendingActions: new Map(),
-      animations: [],
-      selectedShipId: null,
-    });
-  }, []);
+  }
 
   return (
-    <div className="app">
-      {screen === 'lobby' && (
-        <Lobby
-          onStartGame={handleStartGame}
-          onQuickMatch={handleQuickMatch}
-          onHostMatch={handleHostMatch}
-          onJoinMatch={handleJoinMatch}
-        />
-      )}
+    <div className="game">
+      <canvas
+        ref={canvasRef}
+        width={canvasSize.width}
+        height={canvasSize.height}
+        onClick={handleCanvasClick}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+      />
 
-      {screen === 'game' && gameState && (
-        <div className="game-container">
-          <HexRenderer width={windowSize.width} height={windowSize.height} hexSize={40} />
+      {/* Top bar */}
+      <div className="top-bar">
+        <div>Turn: {game.turnNumber}</div>
+        <div style={{ color: currentPlayer?.color }}>
+          {currentPlayer?.name}'s Turn
+          {isCurrentPlayerAI() && ' (AI thinking...)'}
+        </div>
+        <div>
+          AP: {remainingAP} / {PLAYER_MAX_AP}
+        </div>
+      </div>
 
-          {gameState.phase === 'dice_roll' && (
-            <DiceRoll onComplete={handleDiceRollComplete} />
+      {/* Left panel - Ship list */}
+      <div className="left-panel">
+        <h3>Your Ships</h3>
+        {game.ships
+          .filter((s) => s.ownerId === game.currentPlayerId && !s.destroyed)
+          .map((ship) => (
+            <div
+              key={ship.id}
+              className={`ship-item ${ship.id === selectedShipId ? 'selected' : ''}`}
+              onClick={() => selectShip(ship.id)}
+            >
+              <div>{SHIP_STATS[ship.type].name}</div>
+              <div className="ship-ap">
+                AP: {getShipPlannedAP(ship.id)} / {ship.maxAP}
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* Right panel - Controls */}
+      {!isCurrentPlayerAI() && (
+        <div className="right-panel">
+          {selectedShipId && (
+            <>
+              <h3>Rotate Ship</h3>
+              <div className="rotate-buttons">
+                {([0, 1, 2, 3, 4, 5] as HexDirection[]).map((dir) => (
+                  <button key={dir} onClick={() => planRotate(selectedShipId, dir)} className="rotate-btn">
+                    {['E', 'SE', 'SW', 'W', 'NW', 'NE'][dir]}
+                  </button>
+                ))}
+              </div>
+            </>
           )}
 
-          {gameState.phase === 'deployment' && (
-            <DeploymentPhase hexSize={40} onComplete={handleDeploymentComplete} />
-          )}
-
-          {(gameState.phase === 'battle' || gameState.phase === 'ended') && (
-            <GameUI />
-          )}
-
-          {isReplayMode && <ReplayViewer onClose={() => setReplayMode(false)} />}
-
-          {isTutorial && <Tutorial onComplete={handleTutorialComplete} />}
-
-          <button className="exit-game-btn" onClick={handleExitGame}>
-            Exit Game
+          <h3>Actions</h3>
+          <button onClick={undoLastPlan} disabled={plannedActions.length === 0}>
+            Undo Last
           </button>
-
-          <button
-            className="map-editor-btn"
-            onClick={() => setShowMapEditor(true)}
-          >
-            Map Editor
+          <button onClick={clearPlans} disabled={plannedActions.length === 0}>
+            Clear All
           </button>
+          <button onClick={endTurn} className="end-turn-btn">
+            End Turn
+          </button>
+          <button onClick={returnToMenu}>Quit Game</button>
         </div>
       )}
 
-      {showMapEditor && (
-        <MapEditor onSave={handleSaveMap} onClose={() => setShowMapEditor(false)} />
+      {/* Planned moves indicator */}
+      {totalPlannedAP > 0 && (
+        <div className="planned-indicator">
+          Planned: {totalPlannedAP} AP
+        </div>
       )}
     </div>
   );
