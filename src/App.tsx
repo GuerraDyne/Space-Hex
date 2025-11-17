@@ -21,6 +21,10 @@ export const App: React.FC = () => {
   const [showMapEditor, setShowMapEditor] = useState(false);
   const [aiPlayer, setAiPlayer] = useState<AIPlayer | null>(null);
   const [isTutorial, setIsTutorial] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   const {
     gameState,
@@ -40,6 +44,19 @@ export const App: React.FC = () => {
   // Initialize sound system
   useEffect(() => {
     soundManager.init();
+  }, []);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // AI turn handling
@@ -219,7 +236,7 @@ export const App: React.FC = () => {
 
       {screen === 'game' && gameState && (
         <div className="game-container">
-          <HexRenderer width={window.innerWidth} height={window.innerHeight} hexSize={40} />
+          <HexRenderer width={windowSize.width} height={windowSize.height} hexSize={40} />
 
           {gameState.phase === 'dice_roll' && (
             <DiceRoll onComplete={handleDiceRollComplete} />

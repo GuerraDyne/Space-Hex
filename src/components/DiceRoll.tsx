@@ -33,12 +33,23 @@ export const DiceRoll: React.FC<DiceRollProps> = ({ onComplete }) => {
         setFinalValue(result);
         setIsRolling(false);
 
-        // Check if all players have rolled
+        // Auto-roll for AI players after local player rolls
         setTimeout(() => {
-          const allRolled = gameState?.players.every((p) => p.diceRoll !== null);
-          if (allRolled) {
-            setShowResults(true);
-          }
+          gameState?.players.forEach((player) => {
+            if (player.id !== localPlayerId && player.diceRoll === null) {
+              // This is an AI player, auto-roll for them
+              rollDice(player.id);
+            }
+          });
+
+          // Check if all players have rolled
+          setTimeout(() => {
+            const updatedState = useGameStore.getState().gameState;
+            const allRolled = updatedState?.players.every((p) => p.diceRoll !== null);
+            if (allRolled) {
+              setShowResults(true);
+            }
+          }, 500);
         }, 1000);
       }
     }, 100);
